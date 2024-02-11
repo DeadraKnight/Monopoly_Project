@@ -86,6 +86,12 @@ public class FollowWP : MonoBehaviour
             // Calculate the next waypoint
             int nextWP = currentWP + 1;
 
+            if(nextWP > waypoints.Length - 1)
+            {
+                nextWP = 0;
+                targetWP = targetWP - waypoints.Length;
+            }
+
             // While the pawn is not at the next waypoint
             while (Vector3.Distance(transform.position, waypoints[nextWP].transform.position) > 0.001f)
             {
