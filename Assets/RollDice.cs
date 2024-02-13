@@ -7,6 +7,9 @@ public class RollDice : MonoBehaviour
     public GameObject pawnGameObject1;
     public GameObject gameDice;
 
+    public static event System.Action<int, bool> OnDiceRolled;
+
+
     // Array of dice sides sprites to load from Resources folder
     private Sprite[] diceSides;
 
@@ -67,9 +70,10 @@ public class RollDice : MonoBehaviour
         Debug.Log("Dice 2: " + finalSide2);
 
         int total = finalSide1 + finalSide2;
+        bool rolledDouble = finalSide1 == finalSide2;
 
         // After a dice roll occurs...
-        FollowWP followWP1 = pawnGameObject1.GetComponent<FollowWP>();
-        followWP1.diceRoll = total;
+        OnDiceRolled?.Invoke(total, rolledDouble);
+        Debug.Log("OnDiceRolled event logged");
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class FollowWP : MonoBehaviour
@@ -7,6 +8,7 @@ public class FollowWP : MonoBehaviour
     public GameObject jailWaypoint;
 
     // Add a boolean to track if the player is in jail
+    //needs to be added to a player data class
     public bool isInJail = false;
 
     [Tooltip("Tip: Press the small lock in the top right corner to drag multiple waypoints into the list.")]
@@ -28,8 +30,6 @@ public class FollowWP : MonoBehaviour
 
     private float startTime;
     private float distance;
-    public int diceRoll = 0;
-
 
     //use the 'moving' variable to check if the object has stopped
     [HideInInspector]
@@ -46,34 +46,41 @@ public class FollowWP : MonoBehaviour
         startTime = Time.time;
     }
 
-    void Update()
+    private void OnEnable()
     {
-        // Check if a dice roll has occurred
-        if (diceRoll > 0)
+        Debug.Log("FollowWP: OnEnable");
+        RollDice.OnDiceRolled += HandleDiceRolled;
+    }
+
+    private void OnDisable()
+    {
+        RollDice.OnDiceRolled -= HandleDiceRolled;
+    }
+
+    void HandleDiceRolled(int diceRoll, bool rolledDouble)
+    {
+
+        Debug.Log("HandleDiceRolled: Total = " + diceRoll);
+
+        if(isInJail)
         {
-            if (isInJail && diceRoll != 6) // Check if the player is in jail and didn't roll a 6
+            //TODO check if player rolled 3 times
+
+            if (rolledDouble)
             {
-                // Player cannot move if in jail and didn't roll a 6
-                diceRoll = 0; // Reset the dice roll
-            }
-            else if (isInJail && diceRoll == 6) // Check if the player is in jail and rolled a 6
-            {
-                // Player rolled a 6 while in jail, so they can leave jail
+                // Player rolled a double while in jail, so they can leave jail
                 isInJail = false;
                 currentWP = 10; // Move them to the corresponding waypoint
-                diceRoll = 0; // Reset the dice roll
             }
-            else if (!isInJail)
-            {
-                // Move the pawn to the waypoint that corresponds to the dice roll
-                int targetWP = currentWP + diceRoll;
+        }
+        else //player is not in jail
+        {
 
-                // Reset the dice roll
-                diceRoll = 0;
-
-                // Start the MoveToWaypoint coroutine
-                StartCoroutine(MoveToWaypoint(targetWP));
-            }
+            //TODO Allow player to roll again if they rolled a double
+            
+            int targetWP = currentWP + diceRoll;
+            // Start the MoveToWaypoint coroutine
+            StartCoroutine(MoveToWaypoint(targetWP));
         }
     }
 
@@ -82,7 +89,6 @@ public class FollowWP : MonoBehaviour
         // While the current waypoint is not the target waypoint
         while (currentWP != targetWP)
         {
-            
             // Calculate the next waypoint
             int nextWP = currentWP + 1;
 
@@ -102,23 +108,23 @@ public class FollowWP : MonoBehaviour
 
             // Update the current waypoint
             currentWP = nextWP;
-
+        }
             // Check if the pawn has landed on the "Go to Jail" waypoint
-            if (targetWP == 30)  // Replace 30 with the index of your "Go to Jail" waypoint
-            {
-                // Move the pawn to the "Jail" waypoint
-                transform.position = jailWaypoint.transform.position;
+        if (currentWP == 30)  // Replace 30 with the index of your "Go to Jail" waypoint
+        {
 
-                // Set currentWP to 10 to fix the pathing.
-                currentWP = 10;
+            // Move the pawn to the "Jail" waypoint
+            transform.position = jailWaypoint.transform.position;
 
-                // Set the isInJail flag to true
-                isInJail = true;
+            // Set currentWP to 10 to fix the pathing.
+            currentWP = 10;
 
-                // Stop moving
-                moving = false;
-                yield break;
-            }
+            // Set the isInJail flag to true
+            isInJail = true;
+
+            // Stop moving
+            moving = false;
+            yield break;
         }
     }
 }
