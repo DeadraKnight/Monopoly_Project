@@ -17,6 +17,12 @@ public class RollDice : MonoBehaviour
     private SpriteRenderer rend1;
     private SpriteRenderer rend2;
 
+    [Header("Debug")]
+    public bool overrideDiceRoll = false;
+    public int  diceRollValue= 0;
+    public bool diceRolledDouble = false;
+
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -71,6 +77,12 @@ public class RollDice : MonoBehaviour
 
         int total = finalSide1 + finalSide2;
         bool rolledDouble = finalSide1 == finalSide2;
+
+        if (overrideDiceRoll)
+        {
+            total = diceRollValue;
+            rolledDouble = diceRolledDouble;
+        }
 
         // After a dice roll occurs...
         OnDiceRolled?.Invoke(total, rolledDouble);

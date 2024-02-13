@@ -28,23 +28,11 @@ public class FollowWP : MonoBehaviour
     [Tooltip("Rotation Speed")]
     public float rotSpeed = 10.0f;
 
-    private float startTime;
-    private float distance;
-
-    //use the 'moving' variable to check if the object has stopped
-    [HideInInspector]
-    public bool moving = true;
-
     [Header("Debug")]
     [Tooltip("You don't have to change that...")]
     public int currentWP = 0;
     [Tooltip("You don't have to change that...")]
     public int lastWP = 0;
-
-    void Start()
-    {
-        startTime = Time.time;
-    }
 
     private void OnEnable()
     {
@@ -65,17 +53,15 @@ public class FollowWP : MonoBehaviour
         if(isInJail)
         {
             //TODO check if player rolled 3 times
-
             if (rolledDouble)
             {
                 // Player rolled a double while in jail, so they can leave jail
                 isInJail = false;
-                currentWP = 10; // Move them to the corresponding waypoint
+                currentWP = 10; // Move them to the corresponding waypoint to fix pathing
             }
         }
         else //player is not in jail
         {
-
             //TODO Allow player to roll again if they rolled a double
             
             int targetWP = currentWP + diceRoll;
@@ -112,18 +98,11 @@ public class FollowWP : MonoBehaviour
             // Check if the pawn has landed on the "Go to Jail" waypoint
         if (currentWP == 30)  // Replace 30 with the index of your "Go to Jail" waypoint
         {
-
             // Move the pawn to the "Jail" waypoint
             transform.position = jailWaypoint.transform.position;
 
-            // Set currentWP to 10 to fix the pathing.
-            currentWP = 10;
-
             // Set the isInJail flag to true
             isInJail = true;
-
-            // Stop moving
-            moving = false;
             yield break;
         }
     }
