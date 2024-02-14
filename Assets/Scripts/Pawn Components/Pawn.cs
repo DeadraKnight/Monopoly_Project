@@ -15,7 +15,7 @@ public sealed class Pawn : NetworkBehaviour
     private bool _isMoving;
 
     [ServerRpc(RequireOwnership = false)]
-    public void ServerMove(int steps)
+    public void Move(int steps)
     {
         if (_isMoving) return;
 

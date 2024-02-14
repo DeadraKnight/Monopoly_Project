@@ -7,10 +7,7 @@ public sealed class MainView : View
     private Button purchaseTileButton;
 
     [SerializeField]
-    private Button moveForwardButton;
-
-    [SerializeField] 
-    private Button moveBackwardButton;
+    private Button rollDiceButton;
 
     public override void Initialize()
     {
@@ -24,9 +21,13 @@ public sealed class MainView : View
             }
         });
 
-        moveForwardButton.onClick.AddListener(() => Player.Instance.controlledPawn.ServerMove(1));
+        rollDiceButton.onClick.AddListener(() => {
+            int diceRoll1 = Random.Range(1, 7);
+            int diceRoll2 = Random.Range(1, 7);
+            int total = diceRoll1 + diceRoll2;
 
-        moveBackwardButton.onClick.AddListener(() => Player.Instance.controlledPawn.ServerMove(-1));
+            Player.Instance.controlledPawn.Move(total);
+        });
 
         base.Initialize();
     }
