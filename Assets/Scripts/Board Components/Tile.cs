@@ -3,7 +3,7 @@ using UnityEngine;
 public sealed class Tile : MonoBehaviour
 {
     [field: SerializeField]
-    public Transform[] PawnPositions {  get; private set; }
+    public Transform[] PawnPositions { get; private set; }
 
     public Player owningPlayer;
 
@@ -11,6 +11,23 @@ public sealed class Tile : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private Color _defaultColor;
+
+    [SerializeField]
+    public string tileName; // The name of the tile
+
+    [SerializeField]
+    public int cost; // The cost of the tile
+
+    [SerializeField]
+    public int rent; // Thes cost of rent
+
+    public bool IsOwned { get; set; }
+
+    [SerializeField]
+    public bool CantBeOwned;
+
+    [SerializeField]
+    public Sprite sprite;
 
     private void Start()
     {
@@ -22,7 +39,7 @@ public sealed class Tile : MonoBehaviour
         if (owningPlayer == null)
         {
             spriteRenderer.material.color = _defaultColor;
-
+            IsOwned = false; // The tile is not owned
             return;
         }
 

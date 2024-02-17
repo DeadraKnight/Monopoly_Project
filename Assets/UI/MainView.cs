@@ -6,6 +6,12 @@ public sealed class MainView : View
     [SerializeField]
     private Button purchaseTileButton;
 
+    [SerializeField]
+    private Button endTurnButton;
+
+    [SerializeField]
+    private Button showOwnedTilesButton;
+
     public override void Initialize()
     {
         purchaseTileButton.onClick.AddListener(() =>
@@ -18,6 +24,24 @@ public sealed class MainView : View
             }
         });
 
+        endTurnButton.onClick.AddListener(() =>
+        {
+            Player.Instance.hasRolledDiceThisTurn = false;
+            Player.Instance.controlledPawn.IsEnding();
+        });
+
+        showOwnedTilesButton.onClick.AddListener(() =>
+        {
+            // Method to show the owned tiles
+            ShowOwnedTiles();
+        });
+
         base.Initialize();
+    }
+
+    private void ShowOwnedTiles()
+    {
+        // Logic to show the owned tiles
+        // This could be opening a new UI panel that contains the sprites of the owned tiles
     }
 }

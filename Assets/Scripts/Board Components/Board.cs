@@ -1,16 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using FishNet.Object;
 using System;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.UIElements;
 
-public sealed class Board : NetworkBehaviour
+public class Board : NetworkBehaviour
 {
     public static Board Instance { get; private set; }
 
     [field: SerializeField]
-    public Tile[] Tiles {  get; private set; }
+    public Tile[] Tiles { get; private set; }
 
     private void Awake()
     {
@@ -19,7 +18,7 @@ public sealed class Board : NetworkBehaviour
 
     public int Wrap(int index)
     {
-        return index < 0 ? Math.Abs((Tiles.Length - Math.Abs(index)) % Tiles.Length) : index % Tiles.Length; 
+        return index < 0 ? Math.Abs((Tiles.Length - Math.Abs(index)) % Tiles.Length) : index % Tiles.Length;
     }
 
     public Tile[] Slice(int start, int end)
@@ -28,30 +27,44 @@ public sealed class Board : NetworkBehaviour
 
         List<Tile> tileSlice = new();
 
-        int steps = Math.Abs(end - start);
+        int steps = (end - start + Tiles.Length) % Tiles.Length;
 
-        if (end > start)
+        for (int i = start; i <= start + steps; i++)
         {
-            for (int i = start; i <= start + steps; i++)
-            {
-                tileSlice.Add(Tiles[Wrap(i)]);
-            }
-        }
-        else
-        {
-            for (int i = start; i >= start - steps; i--)
-            {
-                tileSlice.Add(Tiles[Wrap(i)]);
-            }
+            tileSlice.Add(Tiles[Wrap(i)]);
         }
 
         return tileSlice.ToArray();
     }
 
+
     [ServerRpc(RequireOwnership = false)]
     public void ServerSetTileOwner(int tileIndex, Player value)
     {
+
+        // Check if the tile can be owned
+        if (Tiles[tileIndex].CantBeOwned)
+        {
+            Debug.Log("This tile cannot be bought!");
+            return;
+        }
+
+        // Check if the player has enough money to buy the tile
+        if (value.balance < Tiles[tileIndex].cost)
+        {
+            Debug.Log("You don't have enough money to buy this tile!");
+            return;
+        }
+
+        // Subtract the cost of the tile from the player's money
+        value.balance -= Tiles[tileIndex].cost;
+
+        // Add the tile to the player's ownedTiles list
+        value.ownedTiles.Add(Tiles[tileIndex]);
+
         ObserversSetTileOwner(tileIndex, value);
+
+        Tiles[tileIndex].IsOwned = true;
     }
 
     [ObserversRpc(BufferLast = true)]

@@ -64,7 +64,7 @@ public sealed class GameManager : NetworkBehaviour
     [Server]
     public void BeginTurn()
     {
-        for (int i = 0;i < Players.Count; i++)
+        for (int i = 0; i < Players.Count; i++)
         {
             Players[i].BeginTurn();
         }

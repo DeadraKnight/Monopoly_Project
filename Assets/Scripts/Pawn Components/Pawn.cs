@@ -1,9 +1,9 @@
 using DG.Tweening;
 using FishNet.Object;
 using FishNet.Object.Synchronizing;
+using System;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 
 public sealed class Pawn : NetworkBehaviour
 {
@@ -13,20 +13,37 @@ public sealed class Pawn : NetworkBehaviour
     [SyncVar]
     public int currentPosition;
 
+    public GameObject jailWaypoint;
+
     // An array of sprites to store the different icons
     [SerializeField]
-    private SpriteRenderer[] sprites;
-    private SpriteRenderer sprite;
+    private Sprite[] sprites;
 
     private bool _isMoving;
 
+    /// <summary>
+    /// This will set the players avatar in order of the Index of players.
+    /// </summary>
     public override void OnStartClient()
     {
         base.OnStartClient();
 
-        // Assign the icon based on the player index
-        int playerIndex = GameManager.Instance.Players.IndexOf(controllingPlayer);
-        sprite = sprites[playerIndex];
+        GetComponent<SpriteRenderer>().sprite = sprites[GameManager.Instance.Players.IndexOf(controllingPlayer)];
+    }
+
+    private void Start()
+    {
+        // Find the jail waypoint in the scene by its name
+        jailWaypoint = GameObject.Find("Jail_Position");
+    }
+
+    /// <summary>
+    /// This was made to let the server know a turn is ending.
+    /// </summary>
+    [ServerRpc(RequireOwnership = false)]
+    public void IsEnding()
+    {
+        GameManager.Instance.EndTurn();
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -36,7 +53,7 @@ public sealed class Pawn : NetworkBehaviour
 
         _isMoving = true;
 
-        Tile[] tiles = Board.Instance.Slice(currentPosition, currentPosition + steps);
+        Tile[] tiles = Board.Instance.Slice(currentPosition, (currentPosition + steps) % Board.Instance.Tiles.Length);
 
         int controllingPlayerIndex = GameManager.Instance.Players.IndexOf(controllingPlayer);
 
@@ -48,10 +65,20 @@ public sealed class Pawn : NetworkBehaviour
         {
             _isMoving = false;
 
-            currentPosition += steps;
+            currentPosition = (currentPosition + steps) % Board.Instance.Tiles.Length;
 
-            GameManager.Instance.EndTurn();
+            // Check if the new position is the "Go To Jail" tile
+            if (currentPosition == 30)
+            {
+                // Move the pawn to the "Jail" waypoint
+                transform.position = jailWaypoint.transform.position;
 
+                // Set currentWP to 10 to fix the pathing.
+                currentPosition = 10;
+
+                // Set the isInJail flag to true
+                Player.Instance.isInJail = true;
+            }
         });
 
         tween.Play();

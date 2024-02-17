@@ -1,6 +1,7 @@
 using FishNet.Connection;
 using FishNet.Object;
 using FishNet.Object.Synchronizing;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -11,13 +12,16 @@ public sealed class Player : NetworkBehaviour
     [SyncVar]
     public string username;
 
+    [SyncVar]
+    public int balance = 1500; // Players start with 1500 dollars
+
     [field: SyncVar]
-    public bool IsReady 
+    public bool IsReady
     {
         get;
 
         [ServerRpc(RequireOwnership = false)]
-        set; 
+        set;
     }
 
     [SerializeField]
@@ -25,6 +29,12 @@ public sealed class Player : NetworkBehaviour
 
     [SyncVar]
     public Pawn controlledPawn;
+
+    public bool hasRolledDiceThisTurn = false;
+
+    public bool isInJail = false;
+
+    public List<Tile> ownedTiles = new List<Tile>();
 
     public override void OnStartServer()
     {
