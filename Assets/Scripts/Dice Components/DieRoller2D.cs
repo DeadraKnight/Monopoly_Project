@@ -1,4 +1,7 @@
+using FishNet.Component.Animating;
+using FishNet.Component.Transforming;
 using System;
+using TMPro;
 using UnityEngine;
 
 public class DieRoller2D : MonoBehaviour
@@ -26,7 +29,7 @@ public class DieRoller2D : MonoBehaviour
     }
 
     Rigidbody2D _rigidbody2D;
-    Animator _animator;
+    NetworkAnimator _networkAnimator;
     static readonly int RollingAnimation = Animator.StringToHash("Rolling");
     static readonly int[] ResultAnimations = new[]
     {
@@ -46,7 +49,7 @@ public class DieRoller2D : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _rigidbody2D.isKinematic = true;
-        _animator = GetComponent<Animator>();
+        _networkAnimator = GetComponent<NetworkAnimator>();
         _audioClipPlayer = GetComponent<RandomAudioClipPlayer>();
     }
 
@@ -69,13 +72,13 @@ public class DieRoller2D : MonoBehaviour
     {
         _rigidbody2D.isKinematic = false;
         _rigidbody2D.AddForce(GetRollForce());
-        _animator.SetTrigger(RollingAnimation);
+        _networkAnimator.SetTrigger(RollingAnimation);
         _isRolling = true;
     }
 
     void RollWithoutPhysics()
     {
-        _animator.SetTrigger(RollingAnimation);
+        _networkAnimator.SetTrigger(RollingAnimation);
         _isRolling = true;
         _timeRemaining = _rollTime;
     }
@@ -85,7 +88,7 @@ public class DieRoller2D : MonoBehaviour
         _isRolling = false;
         _rigidbody2D.isKinematic = true;
         _rigidbody2D.velocity = Vector2.zero;
-        _animator.SetTrigger(ResultAnimations[Result - 1]);
+        _networkAnimator.SetTrigger(ResultAnimations[Result - 1]);
         OnRoll?.Invoke(Result);
     }
     
