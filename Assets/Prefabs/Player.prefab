@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4375833892276634760}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
   NetworkObserver: {fileID: 0}
   <PrefabId>k__BackingField: 0
   <SpawnableCollectionId>k__BackingField: 0
-  _scenePathHash: 799766542
+  _scenePathHash: 0
   <SceneId>k__BackingField: 0
   <AssetPathHash>k__BackingField: 7807759643866311769
 --- !u!114 &4375833892276634760
@@ -82,6 +82,10 @@ MonoBehaviour:
   _addedNetworkObject: {fileID: 2514928649618324120}
   _networkObjectCache: {fileID: 2514928649618324120}
   username: 
+  balance: 1500
   <IsReady>k__BackingField: 0
   pawnPrefab: {fileID: 7112630309777719390, guid: 7db6443279335634898233784f02e43d, type: 3}
   controlledPawn: {fileID: 0}
+  hasRolledDiceThisTurn: 0
+  isInJail: 0
+  ownedTiles: []
