@@ -142,6 +142,7 @@ MonoBehaviour:
   - {fileID: 7482667652216324306, guid: 14b171d3fa45878479f1cc4e2048815d, type: 3}
   - {fileID: 7482667652216324306, guid: 14b171d3fa45878479f1cc4e2048815d, type: 3}
   - {fileID: 7482667652216324306, guid: 14b171d3fa45878479f1cc4e2048815d, type: 3}
+  moveSound: {fileID: 8300000, guid: b9b76435739588646a744b349ee261eb, type: 3}
 --- !u!222 &8115227469252947675
 CanvasRenderer:
   m_ObjectHideFlags: 0
