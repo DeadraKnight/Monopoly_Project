@@ -1286,6 +1286,7 @@ MonoBehaviour:
   - {fileID: 874429712}
   - {fileID: 391198000}
   - {fileID: 2109565269}
+  moneySound: {fileID: 8300000, guid: f2678591aeaa0844bb36ec0b561aa5ce, type: 3}
 --- !u!114 &589564911
 MonoBehaviour:
   m_ObjectHideFlags: 0
