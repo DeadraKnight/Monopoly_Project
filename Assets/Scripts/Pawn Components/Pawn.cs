@@ -79,6 +79,18 @@ public sealed class Pawn : NetworkBehaviour
                 // Set the isInJail flag to true
                 Player.Instance.isInJail = true;
             }
+            //if statement to check if the player has looped around the board
+            if (currentPosition < steps)
+            {
+                // Add 200 to the players balance
+                Player.Instance.Balance += 200;
+            }
+            // Check if current tile is a ChanceTile
+            if (Board.Instance.Tiles[currentPosition].ChanceTile)
+            {
+                // Call the ChanceCard method
+                GameManager.Instance.ChanceCard();
+            }
         });
 
         tween.Play();

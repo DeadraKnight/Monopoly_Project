@@ -50,14 +50,14 @@ public class Board : NetworkBehaviour
         }
 
         // Check if the player has enough money to buy the tile
-        if (value.balance < Tiles[tileIndex].cost)
+        if (value.Balance < Tiles[tileIndex].cost)
         {
             Debug.Log("You don't have enough money to buy this tile!");
             return;
         }
 
         // Subtract the cost of the tile from the player's money
-        value.balance -= Tiles[tileIndex].cost;
+        value.Balance -= Tiles[tileIndex].cost;
 
         // Add the tile to the player's ownedTiles list
         value.ownedTiles.Add(Tiles[tileIndex]);

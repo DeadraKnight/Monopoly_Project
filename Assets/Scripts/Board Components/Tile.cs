@@ -27,6 +27,9 @@ public sealed class Tile : MonoBehaviour
     public bool CantBeOwned;
 
     [SerializeField]
+    public bool ChanceTile;
+
+    [SerializeField]
     public Sprite sprite;
 
     private void Start()

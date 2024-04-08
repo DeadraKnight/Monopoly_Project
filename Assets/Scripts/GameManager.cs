@@ -1,5 +1,7 @@
 using FishNet.Object;
 using FishNet.Object.Synchronizing;
+using FishNet.Transporting.Tugboat;
+using JetBrains.Annotations;
 using System.Linq;
 using UnityEngine;
 
@@ -79,5 +81,44 @@ public sealed class GameManager : NetworkBehaviour
         Turn = (Turn + 1) % Players.Count;
 
         BeginTurn();
+    }
+
+    [Server]
+    public void ChanceCard()
+    {
+        //switch statement to determine the outcome of the chance card
+        switch (Random.Range(1, 6))
+        {
+            case 1:
+                // Player Add 200 to the player's balance
+                Players[Turn].Balance += 200;
+                break;
+            case 2:
+                // Subtract 200 from the player's balance
+                Players[Turn].Balance -= 200;
+                break;
+            case 3:
+                // Player goes to jail
+                Player.Instance.controlledPawn.currentPosition = 30;
+                break;
+            case 4:
+                // Player loses 50 to each player
+                for (int i = 0; i < Players.Count; i++)
+                {
+                    Players[i].Balance += 50;
+                    Player.Instance.Balance -= 100;
+                }
+                break;
+            case 5:
+                //Skip the player's next turn
+
+                break;
+            case 6:
+                // Subtract 50 from the player's balance
+                Players[Turn].Balance -= 50;
+                break;
+        }
+
+        
     }
 }
