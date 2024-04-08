@@ -82,7 +82,7 @@ MonoBehaviour:
   _addedNetworkObject: {fileID: 2514928649618324120}
   _networkObjectCache: {fileID: 2514928649618324120}
   username: 
-  balance: 1500
+  Balance: 1500
   <IsReady>k__BackingField: 0
   pawnPrefab: {fileID: 7112630309777719390, guid: 7db6443279335634898233784f02e43d, type: 3}
   controlledPawn: {fileID: 0}

@@ -43,6 +43,7 @@ public sealed class Player : NetworkBehaviour
         GameManager.Instance.Players.Add(this);
     }
 
+
     public override void OnStopServer()
     {
         base.OnStopServer();

@@ -83,7 +83,7 @@ public sealed class Pawn : NetworkBehaviour
             if (currentPosition < steps)
             {
                 // Add 200 to the players balance
-                Player.Instance.Balance += 200;
+                controllingPlayer.Balance += 200;
             }
             // Check if current tile is a ChanceTile
             if (Board.Instance.Tiles[currentPosition].ChanceTile)

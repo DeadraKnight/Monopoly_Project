@@ -100,13 +100,14 @@ public sealed class GameManager : NetworkBehaviour
             case 3:
                 // Player goes to jail
                 Player.Instance.controlledPawn.currentPosition = 30;
+                Player.Instance.isInJail = true;
                 break;
             case 4:
                 // Player loses 50 to each player
                 for (int i = 0; i < Players.Count; i++)
                 {
                     Players[i].Balance += 50;
-                    Player.Instance.Balance -= 100;
+                    Player.Instance.Balance -= 50;
                 }
                 break;
             case 5:

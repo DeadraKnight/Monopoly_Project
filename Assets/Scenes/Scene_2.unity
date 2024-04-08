@@ -871,6 +871,7 @@ GameObject:
   - component: {fileID: 726565518}
   - component: {fileID: 726565517}
   - component: {fileID: 726565516}
+  - component: {fileID: 726565519}
   m_Layer: 0
   m_Name: Game_Manager
   m_TagString: Untagged
@@ -944,6 +945,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &726565519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 726565515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942b0f4adc4a3d34b978c9986d0ed644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balanceText: {fileID: 1848798246}
 --- !u!1 &753943725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2877,6 +2891,140 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1848798243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1848798244}
+  - component: {fileID: 1848798247}
+  - component: {fileID: 1848798246}
+  m_Layer: 5
+  m_Name: Player_Balance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1848798244
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848798243}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0583333, y: 1.0583333, z: 1.0583333}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2, y: -3.7054}
+  m_SizeDelta: {x: 3.7946, y: 0.7702}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1848798246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848798243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Balance: '
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1848798247
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848798243}
+  m_CullTransparentMesh: 1
 --- !u!1 &1965633973
 GameObject:
   m_ObjectHideFlags: 0
@@ -11924,6 +12072,7 @@ MonoBehaviour:
   cost: 0
   rent: 0
   CantBeOwned: 1
+  ChanceTile: 1
   sprite: {fileID: 0}
 --- !u!114 &7432240296427811764
 MonoBehaviour:
@@ -11948,6 +12097,7 @@ MonoBehaviour:
   cost: 140
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296467263254
 MonoBehaviour:
@@ -11972,6 +12122,7 @@ MonoBehaviour:
   cost: 320
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296475917498
 MonoBehaviour:
@@ -11996,6 +12147,7 @@ MonoBehaviour:
   cost: 100
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296561222811
 MonoBehaviour:
@@ -12020,6 +12172,7 @@ MonoBehaviour:
   cost: 260
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296596414261
 MonoBehaviour:
@@ -12044,6 +12197,7 @@ MonoBehaviour:
   cost: 60
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296603125080
 MonoBehaviour:
@@ -12068,6 +12222,7 @@ MonoBehaviour:
   cost: 200
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296609564179
 MonoBehaviour:
@@ -12092,6 +12247,7 @@ MonoBehaviour:
   cost: 0
   rent: 0
   CantBeOwned: 1
+  ChanceTile: 1
   sprite: {fileID: 0}
 --- !u!114 &7432240296687516215
 MonoBehaviour:
@@ -12116,6 +12272,7 @@ MonoBehaviour:
   cost: 100
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296776403892
 MonoBehaviour:
@@ -12140,6 +12297,7 @@ MonoBehaviour:
   cost: 0
   rent: 0
   CantBeOwned: 1
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296827800074
 MonoBehaviour:
@@ -12164,6 +12322,7 @@ MonoBehaviour:
   cost: 0
   rent: 0
   CantBeOwned: 1
+  ChanceTile: 1
   sprite: {fileID: 0}
 --- !u!114 &7432240296842283212
 MonoBehaviour:
@@ -12188,6 +12347,7 @@ MonoBehaviour:
   cost: 200
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296909275404
 MonoBehaviour:
@@ -12212,6 +12372,7 @@ MonoBehaviour:
   cost: 220
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296947836222
 MonoBehaviour:
@@ -12236,6 +12397,7 @@ MonoBehaviour:
   cost: 0
   rent: 0
   CantBeOwned: 1
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296993409730
 MonoBehaviour:
@@ -12260,6 +12422,7 @@ MonoBehaviour:
   cost: 280
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297008868615
 MonoBehaviour:
@@ -12284,6 +12447,7 @@ MonoBehaviour:
   cost: 180
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297034814227
 MonoBehaviour:
@@ -12308,6 +12472,7 @@ MonoBehaviour:
   cost: 0
   rent: 0
   CantBeOwned: 1
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297141111185
 MonoBehaviour:
@@ -12332,6 +12497,7 @@ MonoBehaviour:
   cost: 150
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297166817793
 MonoBehaviour:
@@ -12356,6 +12522,7 @@ MonoBehaviour:
   cost: 240
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297173561971
 MonoBehaviour:
@@ -12380,6 +12547,7 @@ MonoBehaviour:
   cost: 150
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297212233796
 MonoBehaviour:
@@ -12404,6 +12572,7 @@ MonoBehaviour:
   cost: 260
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297214778132
 MonoBehaviour:
@@ -12428,6 +12597,7 @@ MonoBehaviour:
   cost: 180
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297244094108
 MonoBehaviour:
@@ -12452,6 +12622,7 @@ MonoBehaviour:
   cost: 400
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297448769180
 MonoBehaviour:
@@ -12476,6 +12647,7 @@ MonoBehaviour:
   cost: 200
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297550599519
 MonoBehaviour:
@@ -12499,7 +12671,8 @@ MonoBehaviour:
   tileName: Chance
   cost: 0
   rent: 0
-  CantBeOwned: 0
+  CantBeOwned: 1
+  ChanceTile: 1
   sprite: {fileID: 0}
 --- !u!114 &7432240297560591800
 MonoBehaviour:
@@ -12524,6 +12697,7 @@ MonoBehaviour:
   cost: 0
   rent: 0
   CantBeOwned: 1
+  ChanceTile: 1
   sprite: {fileID: 0}
 --- !u!114 &7432240297575915369
 MonoBehaviour:
@@ -12548,6 +12722,7 @@ MonoBehaviour:
   cost: 220
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297669134810
 MonoBehaviour:
@@ -12572,6 +12747,7 @@ MonoBehaviour:
   cost: 200
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297683915077
 MonoBehaviour:
@@ -12596,6 +12772,7 @@ MonoBehaviour:
   cost: 0
   rent: 0
   CantBeOwned: 1
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297861101513
 MonoBehaviour:
@@ -12620,6 +12797,7 @@ MonoBehaviour:
   cost: 0
   rent: 0
   CantBeOwned: 1
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297880302305
 MonoBehaviour:
@@ -12644,6 +12822,7 @@ MonoBehaviour:
   cost: 0
   rent: 0
   CantBeOwned: 1
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297938561962
 MonoBehaviour:
@@ -12668,6 +12847,7 @@ MonoBehaviour:
   cost: 300
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298006075610
 MonoBehaviour:
@@ -12692,6 +12872,7 @@ MonoBehaviour:
   cost: 200
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298105856368
 MonoBehaviour:
@@ -12716,6 +12897,7 @@ MonoBehaviour:
   cost: 140
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298119598484
 MonoBehaviour:
@@ -12740,6 +12922,7 @@ MonoBehaviour:
   cost: 160
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298367951227
 MonoBehaviour:
@@ -12764,6 +12947,7 @@ MonoBehaviour:
   cost: 60
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298431034769
 MonoBehaviour:
@@ -12788,6 +12972,7 @@ MonoBehaviour:
   cost: 120
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298459521958
 MonoBehaviour:
@@ -12812,6 +12997,7 @@ MonoBehaviour:
   cost: 0
   rent: 0
   CantBeOwned: 1
+  ChanceTile: 1
   sprite: {fileID: 0}
 --- !u!114 &7432240298462296769
 MonoBehaviour:
@@ -12836,6 +13022,7 @@ MonoBehaviour:
   cost: 350
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298486992014
 MonoBehaviour:
@@ -12860,6 +13047,7 @@ MonoBehaviour:
   cost: 300
   rent: 0
   CantBeOwned: 0
+  ChanceTile: 0
   sprite: {fileID: 0}
 --- !u!4 &7437586937981195911
 Transform:
@@ -15392,3 +15580,4 @@ SceneRoots:
   - {fileID: 1830936825}
   - {fileID: 589564909}
   - {fileID: 1350806664}
+  - {fileID: 1848798244}
