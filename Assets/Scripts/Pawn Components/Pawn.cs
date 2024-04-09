@@ -65,6 +65,7 @@ public sealed class Pawn : NetworkBehaviour
         _isMoving = true;
 
         // Play the move sound effect
+        audioSource.volume = 0.5f;
         audioSource.Play();
 
         Tile[] tiles = Board.Instance.Slice(currentPosition, (currentPosition + steps) % Board.Instance.Tiles.Length);

@@ -74,6 +74,7 @@ public class Board : NetworkBehaviour
 
         Tiles[tileIndex].IsOwned = true;
 
+        audioSource.volume = 0.5f;
         audioSource.Play();
     }
 
