@@ -13,7 +13,7 @@ public sealed class Player : NetworkBehaviour
     public string username;
 
     [SyncVar]
-    public int balance = 1500; // Players start with 1500 dollars
+    public int Balance = 1500; // Players start with 1500 dollars
 
     [field: SyncVar]
     public bool IsReady
@@ -42,6 +42,7 @@ public sealed class Player : NetworkBehaviour
 
         GameManager.Instance.Players.Add(this);
     }
+
 
     public override void OnStopServer()
     {
