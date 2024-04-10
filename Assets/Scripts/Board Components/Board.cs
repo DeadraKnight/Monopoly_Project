@@ -11,9 +11,17 @@ public class Board : NetworkBehaviour
     [field: SerializeField]
     public Tile[] Tiles { get; private set; }
 
+    public AudioClip moneySound;
+
+    private AudioSource audioSource;
+
     private void Awake()
     {
         Instance = this;
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.clip = moneySound;
     }
 
     public int Wrap(int index)
@@ -65,6 +73,9 @@ public class Board : NetworkBehaviour
         ObserversSetTileOwner(tileIndex, value);
 
         Tiles[tileIndex].IsOwned = true;
+
+        audioSource.volume = 0.5f;
+        audioSource.Play();
     }
 
     [ObserversRpc(BufferLast = true)]
