@@ -34,6 +34,8 @@ public sealed class Player : NetworkBehaviour
 
     public bool isInJail = false;
 
+    public Color pawnColor; // stores the chosen color
+
     public List<Tile> ownedTiles = new List<Tile>();
 
     public override void OnStartServer()
