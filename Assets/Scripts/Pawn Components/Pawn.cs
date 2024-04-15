@@ -95,6 +95,24 @@ public sealed class Pawn : NetworkBehaviour
             {
                 controllingPlayer.Balance -= Board.Instance.Tiles[currentPosition].rent;
             }
+            if (Board.Instance.Tiles[currentPosition].TaxTile)
+            {
+                int taxAmount = Board.Instance.Tiles[currentPosition].TaxCost;
+
+                // Deduct tax from player balance
+                controllingPlayer.Balance -= taxAmount;
+
+                // Add tax to the tax pile
+                Board.Instance.TaxPile += taxAmount;
+
+                // (Optional) Inform the player about the tax payment
+                Debug.Log($"Player {controllingPlayer.username} paid ${taxAmount} in tax!");
+            }
+            if (currentPosition == 20)
+            {
+                controllingPlayer.Balance += Board.Instance.TaxPile;
+                Board.Instance.TaxPile = 0;
+            }
         });
 
         tween.Play();

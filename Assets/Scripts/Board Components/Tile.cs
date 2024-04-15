@@ -33,6 +33,9 @@ public class Tile : MonoBehaviour
     public bool TaxTile;
 
     [SerializeField]
+    public int TaxCost;
+
+    [SerializeField]
     public Sprite sprite;
 
     private void Start()

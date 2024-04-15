@@ -11,6 +11,9 @@ public class Board : NetworkBehaviour
     [field: SerializeField]
     public Tile[] Tiles { get; private set; }
 
+    [SerializeField]
+    public int TaxPile = 0;
+
     private void Awake()
     {
         Instance = this;
