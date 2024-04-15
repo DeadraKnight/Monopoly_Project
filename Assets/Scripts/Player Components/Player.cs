@@ -30,8 +30,10 @@ public sealed class Player : NetworkBehaviour
     [SyncVar]
     public Pawn controlledPawn;
 
+    [SyncVar]
     public bool hasRolledDiceThisTurn = false;
 
+    [SyncVar]
     public bool isInJail = false;
 
     public Color pawnColor; // stores the chosen color

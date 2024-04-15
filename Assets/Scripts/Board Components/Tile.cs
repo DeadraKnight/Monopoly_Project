@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public sealed class Tile : MonoBehaviour
+public class Tile : MonoBehaviour
 {
     [field: SerializeField]
     public Transform[] PawnPositions { get; private set; }
@@ -28,6 +28,9 @@ public sealed class Tile : MonoBehaviour
 
     [SerializeField]
     public bool ChanceTile;
+
+    [SerializeField]
+    public bool TaxTile;
 
     [SerializeField]
     public Sprite sprite;

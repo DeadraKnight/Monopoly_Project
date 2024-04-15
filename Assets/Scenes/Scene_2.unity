@@ -12871,6 +12871,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 1
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296427811764
 MonoBehaviour:
@@ -12893,9 +12894,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875794041242792}
   tileName: States Ave.
   cost: 140
-  rent: 0
+  rent: 50
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296467263254
 MonoBehaviour:
@@ -12918,9 +12920,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875793962997770}
   tileName: Pennsylvania Ave.
   cost: 320
-  rent: 0
+  rent: 170
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296475917498
 MonoBehaviour:
@@ -12943,9 +12946,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875793954868134}
   tileName: Oriental Ave.
   cost: 100
-  rent: 0
+  rent: 30
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296561222811
 MonoBehaviour:
@@ -12968,9 +12972,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875794174694279}
   tileName: Ventnor Ave.
   cost: 260
-  rent: 0
+  rent: 130
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296596414261
 MonoBehaviour:
@@ -12993,9 +12998,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875794140555305}
   tileName: Mediterranean Ave.
   cost: 60
-  rent: 0
+  rent: 20
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296603125080
 MonoBehaviour:
@@ -13018,9 +13024,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875794096681540}
   tileName: Pennsylvania Railroad
   cost: 200
-  rent: 0
+  rent: 80
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296609564179
 MonoBehaviour:
@@ -13046,6 +13053,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 1
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296687516215
 MonoBehaviour:
@@ -13068,9 +13076,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875793780493611}
   tileName: Vermont Ave.
   cost: 100
-  rent: 0
+  rent: 30
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296776403892
 MonoBehaviour:
@@ -13096,6 +13105,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296827800074
 MonoBehaviour:
@@ -13121,6 +13131,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 1
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296842283212
 MonoBehaviour:
@@ -13146,6 +13157,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296909275404
 MonoBehaviour:
@@ -13168,9 +13180,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875793782076944}
   tileName: Indiana Ave.
   cost: 220
-  rent: 0
+  rent: 100
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296947836222
 MonoBehaviour:
@@ -13196,6 +13209,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296993409730
 MonoBehaviour:
@@ -13218,9 +13232,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875793465753054}
   tileName: Marvin Gardens
   cost: 280
-  rent: 0
+  rent: 140
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297008868615
 MonoBehaviour:
@@ -13243,9 +13258,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875793414117915}
   tileName: Tennessee Ave.
   cost: 180
-  rent: 0
+  rent: 80
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297034814227
 MonoBehaviour:
@@ -13271,6 +13287,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297141111185
 MonoBehaviour:
@@ -13296,6 +13313,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297166817793
 MonoBehaviour:
@@ -13318,9 +13336,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875793570217245}
   tileName: Illinois Ave.
   cost: 240
-  rent: 0
+  rent: 120
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297173561971
 MonoBehaviour:
@@ -13346,6 +13365,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297212233796
 MonoBehaviour:
@@ -13368,9 +13388,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875793214947160}
   tileName: Atlantic Ave.
   cost: 260
-  rent: 0
+  rent: 130
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297214778132
 MonoBehaviour:
@@ -13393,9 +13414,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875793215548424}
   tileName: St. Jame Place
   cost: 180
-  rent: 0
+  rent: 80
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297244094108
 MonoBehaviour:
@@ -13418,9 +13440,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875793177319808}
   tileName: Boardwalk
   cost: 400
-  rent: 0
+  rent: 220
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297448769180
 MonoBehaviour:
@@ -13446,6 +13469,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297550599519
 MonoBehaviour:
@@ -13471,6 +13495,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 1
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297560591800
 MonoBehaviour:
@@ -13496,6 +13521,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 1
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297575915369
 MonoBehaviour:
@@ -13518,9 +13544,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875792854870133}
   tileName: Ketucky Ave.
   cost: 220
-  rent: 0
+  rent: 100
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297669134810
 MonoBehaviour:
@@ -13543,9 +13570,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875793067900614}
   tileName: New York Ave.
   cost: 200
-  rent: 0
+  rent: 90
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297683915077
 MonoBehaviour:
@@ -13571,6 +13599,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297861101513
 MonoBehaviour:
@@ -13596,6 +13625,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297880302305
 MonoBehaviour:
@@ -13621,6 +13651,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297938561962
 MonoBehaviour:
@@ -13643,9 +13674,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875792798473398}
   tileName: Pacific Ave.
   cost: 300
-  rent: 0
+  rent: 150
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298006075610
 MonoBehaviour:
@@ -13668,9 +13700,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875792731484102}
   tileName: Reading Railroad
   cost: 200
-  rent: 0
+  rent: 50
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298105856368
 MonoBehaviour:
@@ -13693,9 +13726,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875792361625196}
   tileName: St. Charles Place
   cost: 140
-  rent: 0
+  rent: 50
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298119598484
 MonoBehaviour:
@@ -13718,9 +13752,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875792310134408}
   tileName: Virgina Ave.
   cost: 160
-  rent: 0
+  rent: 70
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298367951227
 MonoBehaviour:
@@ -13743,9 +13778,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875792087012967}
   tileName: Baltic Ave.
   cost: 60
-  rent: 0
+  rent: 20
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298431034769
 MonoBehaviour:
@@ -13768,9 +13804,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875792300688013}
   tileName: Connecticut Ave.
   cost: 120
-  rent: 0
+  rent: 50
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298459521958
 MonoBehaviour:
@@ -13796,6 +13833,7 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 1
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298462296769
 MonoBehaviour:
@@ -13818,9 +13856,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875792265235933}
   tileName: Park Place
   cost: 350
-  rent: 0
+  rent: 200
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298486992014
 MonoBehaviour:
@@ -13843,9 +13882,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 4471875792208034706}
   tileName: North Carolina Ave.
   cost: 300
-  rent: 0
+  rent: 150
   CantBeOwned: 0
   ChanceTile: 0
+  TaxTile: 0
   sprite: {fileID: 0}
 --- !u!4 &7437586937981195911
 Transform:

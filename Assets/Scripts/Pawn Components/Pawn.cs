@@ -91,6 +91,10 @@ public sealed class Pawn : NetworkBehaviour
                 // Call the ChanceCard method
                 GameManager.Instance.ChanceCard();
             }
+            if (Board.Instance.Tiles[currentPosition].owningPlayer != controllingPlayer && Board.Instance.Tiles[currentPosition].IsOwned == true)
+            {
+                controllingPlayer.Balance -= Board.Instance.Tiles[currentPosition].rent;
+            }
         });
 
         tween.Play();
