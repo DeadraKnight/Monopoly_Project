@@ -98,8 +98,13 @@ public sealed class GameManager : NetworkBehaviour
                 Players[Turn].Balance -= 200;
                 break;
             case 3:
-                // Player goes to jail
-                Player.Instance.controlledPawn.currentPosition = 30;
+                // Move the pawn to the "Jail" waypoint
+                Players[Turn].controlledPawn.transform.position = Players[Turn].controlledPawn.jailWaypoint.transform.position;
+
+                // Fix Pawn Position for pathing
+                Players[Turn].controlledPawn.currentPosition = 10;
+
+                // Set the isInJail flag to true
                 Player.Instance.isInJail = true;
                 break;
             case 4:
@@ -111,7 +116,8 @@ public sealed class GameManager : NetworkBehaviour
                 }
                 break;
             case 5:
-                //Skip the player's next turn
+                //Player goes to free parking!
+                Player.Instance.controlledPawn.currentPosition = 20;
 
                 break;
             case 6:

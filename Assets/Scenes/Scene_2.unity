@@ -888,6 +888,7 @@ MonoBehaviour:
   - {fileID: 7432240298462296769}
   - {fileID: 7432240297880302305}
   - {fileID: 7432240297244094108}
+  TaxPile: 0
 --- !u!114 &589564911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12872,6 +12873,7 @@ MonoBehaviour:
   CantBeOwned: 1
   ChanceTile: 1
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296427811764
 MonoBehaviour:
@@ -12898,6 +12900,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296467263254
 MonoBehaviour:
@@ -12924,6 +12927,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296475917498
 MonoBehaviour:
@@ -12950,6 +12954,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296561222811
 MonoBehaviour:
@@ -12976,6 +12981,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296596414261
 MonoBehaviour:
@@ -13002,6 +13008,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296603125080
 MonoBehaviour:
@@ -13023,11 +13030,12 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875794096681540}
   tileName: Pennsylvania Railroad
-  cost: 200
-  rent: 80
-  CantBeOwned: 0
+  cost: 0
+  rent: 0
+  CantBeOwned: 1
   ChanceTile: 0
-  TaxTile: 0
+  TaxTile: 1
+  TaxCost: 120
   sprite: {fileID: 0}
 --- !u!114 &7432240296609564179
 MonoBehaviour:
@@ -13054,6 +13062,7 @@ MonoBehaviour:
   CantBeOwned: 1
   ChanceTile: 1
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296687516215
 MonoBehaviour:
@@ -13080,6 +13089,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296776403892
 MonoBehaviour:
@@ -13106,6 +13116,7 @@ MonoBehaviour:
   CantBeOwned: 1
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296827800074
 MonoBehaviour:
@@ -13132,6 +13143,7 @@ MonoBehaviour:
   CantBeOwned: 1
   ChanceTile: 1
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296842283212
 MonoBehaviour:
@@ -13153,11 +13165,12 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793851760592}
   tileName: Short Line
-  cost: 200
+  cost: 0
   rent: 0
-  CantBeOwned: 0
+  CantBeOwned: 1
   ChanceTile: 0
-  TaxTile: 0
+  TaxTile: 1
+  TaxCost: 120
   sprite: {fileID: 0}
 --- !u!114 &7432240296909275404
 MonoBehaviour:
@@ -13184,6 +13197,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296947836222
 MonoBehaviour:
@@ -13210,6 +13224,7 @@ MonoBehaviour:
   CantBeOwned: 1
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240296993409730
 MonoBehaviour:
@@ -13236,6 +13251,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297008868615
 MonoBehaviour:
@@ -13262,6 +13278,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297034814227
 MonoBehaviour:
@@ -13288,6 +13305,7 @@ MonoBehaviour:
   CantBeOwned: 1
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297141111185
 MonoBehaviour:
@@ -13313,7 +13331,8 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 0
   ChanceTile: 0
-  TaxTile: 0
+  TaxTile: 1
+  TaxCost: 200
   sprite: {fileID: 0}
 --- !u!114 &7432240297166817793
 MonoBehaviour:
@@ -13340,6 +13359,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297173561971
 MonoBehaviour:
@@ -13365,7 +13385,8 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 0
   ChanceTile: 0
-  TaxTile: 0
+  TaxTile: 1
+  TaxCost: 150
   sprite: {fileID: 0}
 --- !u!114 &7432240297212233796
 MonoBehaviour:
@@ -13392,6 +13413,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297214778132
 MonoBehaviour:
@@ -13418,6 +13440,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297244094108
 MonoBehaviour:
@@ -13444,6 +13467,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297448769180
 MonoBehaviour:
@@ -13465,11 +13489,12 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793249923456}
   tileName: B&O_Railroad
-  cost: 200
+  cost: 0
   rent: 0
-  CantBeOwned: 0
+  CantBeOwned: 1
   ChanceTile: 0
-  TaxTile: 0
+  TaxTile: 1
+  TaxCost: 120
   sprite: {fileID: 0}
 --- !u!114 &7432240297550599519
 MonoBehaviour:
@@ -13496,6 +13521,7 @@ MonoBehaviour:
   CantBeOwned: 1
   ChanceTile: 1
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297560591800
 MonoBehaviour:
@@ -13522,6 +13548,7 @@ MonoBehaviour:
   CantBeOwned: 1
   ChanceTile: 1
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297575915369
 MonoBehaviour:
@@ -13548,6 +13575,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297669134810
 MonoBehaviour:
@@ -13574,6 +13602,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297683915077
 MonoBehaviour:
@@ -13599,7 +13628,8 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 0
-  TaxTile: 0
+  TaxTile: 1
+  TaxCost: 100
   sprite: {fileID: 0}
 --- !u!114 &7432240297861101513
 MonoBehaviour:
@@ -13626,6 +13656,7 @@ MonoBehaviour:
   CantBeOwned: 1
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240297880302305
 MonoBehaviour:
@@ -13651,7 +13682,8 @@ MonoBehaviour:
   rent: 0
   CantBeOwned: 1
   ChanceTile: 0
-  TaxTile: 0
+  TaxTile: 1
+  TaxCost: 250
   sprite: {fileID: 0}
 --- !u!114 &7432240297938561962
 MonoBehaviour:
@@ -13678,6 +13710,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298006075610
 MonoBehaviour:
@@ -13699,11 +13732,12 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792731484102}
   tileName: Reading Railroad
-  cost: 200
-  rent: 50
-  CantBeOwned: 0
+  cost: 0
+  rent: 0
+  CantBeOwned: 1
   ChanceTile: 0
-  TaxTile: 0
+  TaxTile: 1
+  TaxCost: 120
   sprite: {fileID: 0}
 --- !u!114 &7432240298105856368
 MonoBehaviour:
@@ -13730,6 +13764,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298119598484
 MonoBehaviour:
@@ -13756,6 +13791,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298367951227
 MonoBehaviour:
@@ -13782,6 +13818,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298431034769
 MonoBehaviour:
@@ -13808,6 +13845,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298459521958
 MonoBehaviour:
@@ -13834,6 +13872,7 @@ MonoBehaviour:
   CantBeOwned: 1
   ChanceTile: 1
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298462296769
 MonoBehaviour:
@@ -13860,6 +13899,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!114 &7432240298486992014
 MonoBehaviour:
@@ -13886,6 +13926,7 @@ MonoBehaviour:
   CantBeOwned: 0
   ChanceTile: 0
   TaxTile: 0
+  TaxCost: 0
   sprite: {fileID: 0}
 --- !u!4 &7437586937981195911
 Transform:
