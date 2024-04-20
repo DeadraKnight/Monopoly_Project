@@ -33,15 +33,9 @@ public sealed class MainView : View
         showOwnedTilesButton.onClick.AddListener(() =>
         {
             // Method to show the owned tiles
-            ShowOwnedTiles();
+            //ShowOwnedTiles();
         });
 
         base.Initialize();
-    }
-
-    private void ShowOwnedTiles()
-    {
-        // Logic to show the owned tiles
-        // This could be opening a new UI panel that contains the sprites of the owned tiles
     }
 }
