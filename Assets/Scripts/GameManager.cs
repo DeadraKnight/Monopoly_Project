@@ -4,10 +4,13 @@ using FishNet.Transporting.Tugboat;
 using JetBrains.Annotations;
 using System.Linq;
 using UnityEngine;
+using System.Collections;
 
 public sealed class GameManager : NetworkBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    public GameEndManager gameEndManager;
 
     [field: SyncObject]
     public SyncList<Player> Players { get; } = new SyncList<Player>();
@@ -24,6 +27,11 @@ public sealed class GameManager : NetworkBehaviour
     [field: SyncVar]
     public int Turn { get; private set; }
 
+    [SerializeField]
+    private GameObject Loser_View;
+
+    private int consecutiveZeroBalanceTurns = 0;
+
 
     private void Awake()
     {
@@ -37,6 +45,8 @@ public sealed class GameManager : NetworkBehaviour
         CanStart = Players.All(player => player.IsReady);
 
         Debug.Log($"There are {Players.Count} players in the game");
+
+        
     }
 
     [Server]
@@ -80,7 +90,35 @@ public sealed class GameManager : NetworkBehaviour
     {
         Turn = (Turn + 1) % Players.Count;
 
+        if (Players[Turn].Balance <= 0)
+        {
+            consecutiveZeroBalanceTurns++;
+        }
+        else
+        {
+            consecutiveZeroBalanceTurns = 0;
+        }
+
+        Debug.Log("Current consecutive zero balance turns: " + consecutiveZeroBalanceTurns);
+
+        if (consecutiveZeroBalanceTurns >= 3)
+        {
+            Debug.Log("Condition to show Loser_View is met");
+            Loser_View.SetActive(true);
+            StartCoroutine(KickPlayerAfterDelay(10f));
+        }
+
         BeginTurn();
+    }
+
+    public IEnumerator KickPlayerAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        Player currentPlayer = Players[Turn];
+        Players.Remove(currentPlayer);
+        currentPlayer.gameObject.SetActive(false);
+        Debug.Log($"Player {currentPlayer} has been kicked from the game");
     }
 
     [Server]
