@@ -13,7 +13,7 @@ public sealed class Player : NetworkBehaviour
     public string username;
 
     [SyncVar]
-    public int Balance = 1500; // Players start with 1500 dollars
+    public int Balance = 1500;
 
     [field: SyncVar]
     public bool IsReady
@@ -30,9 +30,13 @@ public sealed class Player : NetworkBehaviour
     [SyncVar]
     public Pawn controlledPawn;
 
+    [SyncVar]
     public bool hasRolledDiceThisTurn = false;
 
+    [SyncVar]
     public bool isInJail = false;
+
+    public Color pawnColor; // stores the chosen color
 
     public List<Tile> ownedTiles = new List<Tile>();
 

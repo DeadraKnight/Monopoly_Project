@@ -30,8 +30,15 @@ public class DiceRollerUI : MonoBehaviour
 
     void RollDice()
     {
-        ClearResults();
-        _diceRoller.RollDice();
+
+            if (Player.Instance.hasRolledDiceThisTurn == false)
+            {
+                Player.Instance.hasRolledDiceThisTurn = true;
+                ClearResults();
+                _diceRoller.RollDice();
+            }
+        
+        
     }
 
     void ClearResults()

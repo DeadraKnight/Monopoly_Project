@@ -14,18 +14,13 @@ public sealed class Pawn : NetworkBehaviour
     public int currentPosition;
 
     public GameObject jailWaypoint;
+    public GameObject freeParkingWaypoint;
 
     // An array of sprites to store the different icons
     [SerializeField]
     private Sprite[] sprites;
 
     private bool _isMoving;
-
-    // Sound effect for moving the pawn
-    public AudioClip moveSound;
-
-    // AusioSource component for playing sound effect
-    private AudioSource audioSource;
 
     /// <summary>
     /// This will set the players avatar in order of the Index of players.
@@ -41,11 +36,7 @@ public sealed class Pawn : NetworkBehaviour
     {
         // Find the jail waypoint in the scene by its name
         jailWaypoint = GameObject.Find("Jail_Position");
-
-        // Add an AudioSource component to the game object and set it up
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.playOnAwake = false;
-        audioSource.clip = moveSound;
+        freeParkingWaypoint = GameObject.Find("Free_Parking_Position");
     }
 
     /// <summary>
@@ -63,10 +54,6 @@ public sealed class Pawn : NetworkBehaviour
         if (_isMoving) return;
 
         _isMoving = true;
-
-        // Play the move sound effect
-        audioSource.volume = 0.5f;
-        audioSource.Play();
 
         Tile[] tiles = Board.Instance.Slice(currentPosition, (currentPosition + steps) % Board.Instance.Tiles.Length);
 
@@ -92,7 +79,7 @@ public sealed class Pawn : NetworkBehaviour
                 currentPosition = 10;
 
                 // Set the isInJail flag to true
-                Player.Instance.isInJail = true;
+                controllingPlayer.isInJail = true;
             }
             //if statement to check if the player has looped around the board
             if (currentPosition < steps)
@@ -105,6 +92,34 @@ public sealed class Pawn : NetworkBehaviour
             {
                 // Call the ChanceCard method
                 GameManager.Instance.ChanceCard();
+            }
+            if (Board.Instance.Tiles[currentPosition].owningPlayer != controllingPlayer)
+            {
+                int rent = Board.Instance.Tiles[currentPosition].rent; // Get the rent amount of the tile
+
+                controllingPlayer.Balance -= rent; // Deduct rent from player balance
+
+                Board.Instance.Tiles[currentPosition].owningPlayer.Balance += rent; // Add rent to the owning player's balance
+
+                Debug.Log($"Player {controllingPlayer.OwnerId} paid ${rent} in rent to Player {Board.Instance.Tiles[currentPosition].owningPlayer.OwnerId}!");
+            }
+            if (Board.Instance.Tiles[currentPosition].TaxTile)
+            {
+                int taxAmount = Board.Instance.Tiles[currentPosition].TaxCost;
+
+                // Deduct tax from player balance
+                controllingPlayer.Balance -= taxAmount;
+
+                // Add tax to the tax pile
+                Board.Instance.TaxPile += taxAmount;
+
+                // (Optional) Inform the player about the tax payment
+                Debug.Log($"Player {controllingPlayer.username} paid ${taxAmount} in tax!");
+            }
+            if (currentPosition == 20)
+            {
+                controllingPlayer.Balance += Board.Instance.TaxPile;
+                Board.Instance.TaxPile = 0;
             }
         });
 
