@@ -21,6 +21,9 @@ public class Tile : MonoBehaviour
     [SerializeField]
     public int rent; // Thes cost of rent
 
+    [SerializeField]
+    public int sellPrice; // The price the tile can be sold for
+
     public bool IsOwned { get; set; }
 
     [SerializeField]

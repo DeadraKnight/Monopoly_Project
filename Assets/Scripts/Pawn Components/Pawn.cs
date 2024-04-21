@@ -14,6 +14,7 @@ public sealed class Pawn : NetworkBehaviour
     public int currentPosition;
 
     public GameObject jailWaypoint;
+    public GameObject freeParkingWaypoint;
 
     // An array of sprites to store the different icons
     [SerializeField]
@@ -35,6 +36,7 @@ public sealed class Pawn : NetworkBehaviour
     {
         // Find the jail waypoint in the scene by its name
         jailWaypoint = GameObject.Find("Jail_Position");
+        freeParkingWaypoint = GameObject.Find("Free_Parking_Position");
     }
 
     /// <summary>
@@ -77,7 +79,7 @@ public sealed class Pawn : NetworkBehaviour
                 currentPosition = 10;
 
                 // Set the isInJail flag to true
-                Player.Instance.isInJail = true;
+                controllingPlayer.isInJail = true;
             }
             //if statement to check if the player has looped around the board
             if (currentPosition < steps)
@@ -93,7 +95,13 @@ public sealed class Pawn : NetworkBehaviour
             }
             if (Board.Instance.Tiles[currentPosition].owningPlayer != controllingPlayer && Board.Instance.Tiles[currentPosition].IsOwned == true)
             {
-                controllingPlayer.Balance -= Board.Instance.Tiles[currentPosition].rent;
+                int rent = Board.Instance.Tiles[currentPosition].rent; // Get the rent amount of the tile
+
+                controllingPlayer.Balance -= rent; // Deduct rent from player balance
+
+                Board.Instance.Tiles[currentPosition].owningPlayer.Balance += rent; // Add rent to the owning player's balance
+
+                Debug.Log($"Player {controllingPlayer.OwnerId} paid ${rent} in rent to Player {Board.Instance.Tiles[currentPosition].owningPlayer.OwnerId}!");
             }
             if (Board.Instance.Tiles[currentPosition].TaxTile)
             {
