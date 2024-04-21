@@ -30,6 +30,9 @@ public sealed class GameManager : NetworkBehaviour
     [SerializeField]
     private GameObject Loser_View;
 
+    [SerializeField]
+    private GameObject Winner_View;
+
     private int consecutiveZeroBalanceTurns = 0;
 
 
@@ -106,6 +109,11 @@ public sealed class GameManager : NetworkBehaviour
             Debug.Log("Condition to show Loser_View is met");
             Loser_View.SetActive(true);
             StartCoroutine(KickPlayerAfterDelay(10f));
+        }
+
+        if (Players.Count == 1)
+        {
+            Winner_View.SetActive(true);
         }
 
         BeginTurn();
