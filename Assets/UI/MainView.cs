@@ -30,12 +30,6 @@ public sealed class MainView : View
             Player.Instance.controlledPawn.IsEnding();
         });
 
-        showOwnedTilesButton.onClick.AddListener(() =>
-        {
-            // Method to show the owned tiles
-            //ShowOwnedTiles();
-        });
-
         base.Initialize();
     }
 }

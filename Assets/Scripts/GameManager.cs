@@ -79,7 +79,6 @@ public sealed class GameManager : NetworkBehaviour
     public void EndTurn()
     {
         Turn = (Turn + 1) % Players.Count;
-
         BeginTurn();
     }
 
@@ -87,15 +86,17 @@ public sealed class GameManager : NetworkBehaviour
     public void ChanceCard()
     {
         //switch statement to determine the outcome of the chance card
-        switch (Random.Range(1, 6))
+        switch (Random.Range(1, 5))
         {
             case 1:
                 // Player Add 200 to the player's balance
                 Players[Turn].Balance += 200;
+                Debug.Log("Player has received 200");
                 break;
             case 2:
                 // Subtract 200 from the player's balance
-                Players[Turn].Balance -= 200;
+                Players[Turn].Balance += 500;
+                Debug.Log("Player has recevied 500");
                 break;
             case 3:
                 // Move the pawn to the "Jail" waypoint
@@ -103,29 +104,20 @@ public sealed class GameManager : NetworkBehaviour
 
                 // Fix Pawn Position for pathing
                 Players[Turn].controlledPawn.currentPosition = 10;
+                Debug.Log("Player has been sent to jail");
 
                 // Set the isInJail flag to true
-                Player.Instance.isInJail = true;
+                GameManager.Instance.Players[Turn].isInJail = true;
                 break;
             case 4:
-                // Player loses 50 to each player
-                for (int i = 0; i < Players.Count; i++)
-                {
-                    Players[i].Balance += 50;
-                    Player.Instance.Balance -= 50;
-                }
+                
                 break;
             case 5:
                 //Player goes to free parking!
+                Players[Turn].controlledPawn.transform.position = Players[Turn].controlledPawn.freeParkingWaypoint.transform.position;
                 Player.Instance.controlledPawn.currentPosition = 20;
-
+                Debug.Log("Player has been sent to free parking");
                 break;
-            case 6:
-                // Subtract 50 from the player's balance
-                Players[Turn].Balance -= 50;
-                break;
-        }
-
-        
+        } 
     }
 }

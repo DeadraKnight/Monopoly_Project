@@ -13,7 +13,7 @@ public sealed class Player : NetworkBehaviour
     public string username;
 
     [SyncVar]
-    public int Balance = 1500; // Players start with 1500 dollars
+    public int Balance = 1500;
 
     [field: SyncVar]
     public bool IsReady
