@@ -95,13 +95,21 @@ public sealed class Pawn : NetworkBehaviour
             }
             if (Board.Instance.Tiles[currentPosition].IsOwned == true)
             {
-                int rent = Board.Instance.Tiles[currentPosition].rent; // Get the rent amount of the tile
+                if (Board.Instance.Tiles[currentPosition].owningPlayer != controllingPlayer)
+                {
+                    int rent = Board.Instance.Tiles[currentPosition].rent; // Get the rent amount of the tile
 
-                controllingPlayer.Balance -= rent; // Deduct rent from player balance
+                    controllingPlayer.Balance -= rent; // Deduct rent from player balance
 
-                Board.Instance.Tiles[currentPosition].owningPlayer.Balance += rent; // Add rent to the owning player's balance
+                    Board.Instance.Tiles[currentPosition].owningPlayer.Balance += rent; // Add rent to the owning player's balance
 
-                Debug.Log($"Player {controllingPlayer.OwnerId} paid ${rent} in rent to Player {Board.Instance.Tiles[currentPosition].owningPlayer.OwnerId}!");
+                    Debug.Log($"Player {controllingPlayer.OwnerId} paid ${rent} in rent to Player {Board.Instance.Tiles[currentPosition].owningPlayer.OwnerId}!");
+                }
+                else
+                {
+                    // Do nothing
+                }
+                
             }
             if (Board.Instance.Tiles[currentPosition].TaxTile)
             {

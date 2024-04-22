@@ -107,7 +107,7 @@ public sealed class GameManager : NetworkBehaviour
         {
             Debug.Log("Condition to show Loser_View is met");
             Loser_View.SetActive(true);
-            StartCoroutine(KickPlayerAfterDelay(10f));
+            //StartCoroutine(KickPlayerAfterDelay(10f));
         }
 
         // Check if there is only one player left in the game
