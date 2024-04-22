@@ -1049,7 +1049,8 @@ MonoBehaviour:
   <IsNested>k__BackingField: 0
   <ComponentIndex>k__BackingField: 0
   <PredictedSpawn>k__BackingField: {fileID: 0}
-  _networkBehaviours: []
+  _networkBehaviours:
+  - {fileID: 589564910}
   <ParentNetworkObject>k__BackingField: {fileID: 0}
   <ChildNetworkObjects>k__BackingField: []
   SerializedTransformProperties:
@@ -1343,6 +1344,9 @@ MonoBehaviour:
   <CanStart>k__BackingField: 0
   <DidStart>k__BackingField: 0
   <Turn>k__BackingField: 0
+  consecutiveZeroBalanceTurns: 0
+  Loser_View: {fileID: 756180202}
+  Winner_View: {fileID: 2003994219}
 --- !u!114 &726565517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1358,7 +1362,8 @@ MonoBehaviour:
   <IsNested>k__BackingField: 0
   <ComponentIndex>k__BackingField: 0
   <PredictedSpawn>k__BackingField: {fileID: 0}
-  _networkBehaviours: []
+  _networkBehaviours:
+  - {fileID: 726565516}
   <ParentNetworkObject>k__BackingField: {fileID: 0}
   <ChildNetworkObjects>k__BackingField: []
   SerializedTransformProperties:

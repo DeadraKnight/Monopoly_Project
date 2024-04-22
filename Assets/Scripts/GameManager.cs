@@ -4,6 +4,7 @@ using FishNet.Transporting.Tugboat;
 using JetBrains.Annotations;
 using System.Linq;
 using UnityEngine;
+using System.Collections;
 
 public sealed class GameManager : NetworkBehaviour
 {
@@ -56,7 +57,7 @@ public sealed class GameManager : NetworkBehaviour
         }
 
         DidStart = true;
-
+      
         BeginTurn();
     }
 
@@ -88,6 +89,9 @@ public sealed class GameManager : NetworkBehaviour
     {
         Turn = (Turn + 1) % Players.Count;
 
+        Loser_View.SetActive(false);
+        Winner_View.SetActive(false);
+
         if (Players[Turn].Balance <= 0)
         {
             consecutiveZeroBalanceTurns++;
@@ -114,6 +118,17 @@ public sealed class GameManager : NetworkBehaviour
         }
 
         BeginTurn();
+    }
+
+    public IEnumerator KickPlayerAfterDelay(float delay)
+    {
+        Debug.Log("Coroutine started");
+        yield return new WaitForSeconds(delay);
+        Debug.Log("Coroutine finished waiting");
+        Player currentPlayer = Players[Turn];
+        Players.Remove(currentPlayer);
+        currentPlayer.gameObject.SetActive(false);
+        Debug.Log($"Player {currentPlayer} has been kicked from the game");
     }
 
     [Server]
