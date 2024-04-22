@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public sealed class MainView : View
 {
@@ -11,6 +12,15 @@ public sealed class MainView : View
 
     [SerializeField]
     private Button showOwnedTilesButton;
+    
+    [SerializeField] 
+    private TMP_Text balanceText;
+    
+    void Update()
+    {
+        string currentPlayerBalance = GameManager.Instance.Players[GameManager.Instance.Turn].Balance.ToString();
+        balanceText.text = $"Balance: {currentPlayerBalance}";
+    }
 
     public override void Initialize()
     {
