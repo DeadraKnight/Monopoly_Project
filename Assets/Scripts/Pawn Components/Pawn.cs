@@ -93,7 +93,7 @@ public sealed class Pawn : NetworkBehaviour
                 // Call the ChanceCard method
                 GameManager.Instance.ChanceCard();
             }
-            if (Board.Instance.Tiles[currentPosition].owningPlayer != controllingPlayer && Board.Instance.Tiles[currentPosition].IsOwned == true)
+            if (Board.Instance.Tiles[currentPosition].IsOwned == true)
             {
                 int rent = Board.Instance.Tiles[currentPosition].rent; // Get the rent amount of the tile
 
