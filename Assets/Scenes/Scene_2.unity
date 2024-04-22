@@ -1110,6 +1110,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Six Sided Die
       objectReference: {fileID: 0}
+    - target: {fileID: 5064352433410674465, guid: 5900eced18eb02d4f9c14e54980a25cd, type: 3}
+      propertyPath: _scenePathHash
+      value: 2584653461
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064352433410674465, guid: 5900eced18eb02d4f9c14e54980a25cd, type: 3}
+      propertyPath: <SceneId>k__BackingField
+      value: 11101002088612082191
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064352433410674465, guid: 5900eced18eb02d4f9c14e54980a25cd, type: 3}
+      propertyPath: <IsNested>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6726735345896689072, guid: 5900eced18eb02d4f9c14e54980a25cd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.25
@@ -1805,6 +1817,18 @@ PrefabInstance:
     - target: {fileID: 3955659583493194846, guid: 5900eced18eb02d4f9c14e54980a25cd, type: 3}
       propertyPath: m_Name
       value: 'Six Sided Die (1) '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064352433410674465, guid: 5900eced18eb02d4f9c14e54980a25cd, type: 3}
+      propertyPath: _scenePathHash
+      value: 2584653461
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064352433410674465, guid: 5900eced18eb02d4f9c14e54980a25cd, type: 3}
+      propertyPath: <SceneId>k__BackingField
+      value: 11101002089000766675
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064352433410674465, guid: 5900eced18eb02d4f9c14e54980a25cd, type: 3}
+      propertyPath: <IsNested>k__BackingField
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6726735345896689072, guid: 5900eced18eb02d4f9c14e54980a25cd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3384,6 +3408,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1350806664}
+  - component: {fileID: 1350806665}
   m_Layer: 0
   m_Name: Dice Components
   m_TagString: Untagged
@@ -3408,6 +3433,40 @@ Transform:
   - {fileID: 363219188}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1350806665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350806663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <IsNested>k__BackingField: 0
+  <ComponentIndex>k__BackingField: 0
+  <PredictedSpawn>k__BackingField: {fileID: 0}
+  _networkBehaviours:
+  - {fileID: 642514913}
+  - {fileID: 806429012}
+  <ParentNetworkObject>k__BackingField: {fileID: 0}
+  <ChildNetworkObjects>k__BackingField: []
+  SerializedTransformProperties:
+    Position: {x: -1.4640135, y: -1.2457923, z: -0.055360768}
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    LocalScale: {x: 1, y: 1, z: 1}
+  _isNetworked: 1
+  _isGlobal: 0
+  _initializeOrder: 0
+  _defaultDespawnType: 0
+  NetworkObserver: {fileID: 0}
+  <PrefabId>k__BackingField: 0
+  <SpawnableCollectionId>k__BackingField: 0
+  _scenePathHash: 2584653461
+  <SceneId>k__BackingField: 11101002089127194060
+  <AssetPathHash>k__BackingField: 0
 --- !u!1 &1501417733
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,9 @@
 using System;
+using FishNet.Connection;
+using FishNet.Object;
 using UnityEngine;
 
-public class DieRoller2D : MonoBehaviour
+public class DieRoller2D : NetworkBehaviour
 {
     public event Action<int> OnRoll;
     public int Result { get; private set; }
@@ -70,12 +72,14 @@ public class DieRoller2D : MonoBehaviour
         _rigidbody2D.isKinematic = false;
         _rigidbody2D.AddForce(GetRollForce());
         _animator.SetTrigger(RollingAnimation);
+        SetTriggerServerRpc(RollingAnimation);
         _isRolling = true;
     }
 
     void RollWithoutPhysics()
     {
         _animator.SetTrigger(RollingAnimation);
+        SetTriggerServerRpc(RollingAnimation);
         _isRolling = true;
         _timeRemaining = _rollTime;
     }
@@ -86,6 +90,7 @@ public class DieRoller2D : MonoBehaviour
         _rigidbody2D.isKinematic = true;
         _rigidbody2D.velocity = Vector2.zero;
         _animator.SetTrigger(ResultAnimations[Result - 1]);
+        SetTriggerServerRpc(ResultAnimations[Result - 1]);
         OnRoll?.Invoke(Result);
     }
     
@@ -94,5 +99,18 @@ public class DieRoller2D : MonoBehaviour
         return new Vector2(
             UnityEngine.Random.Range(_rollForceMin.x, _rollForceMax.x),
             UnityEngine.Random.Range(_rollForceMin.y, _rollForceMax.y));
+    }
+    
+    [ServerRpc (RequireOwnership = false)]
+    private void SetTriggerServerRpc(int animation)
+    {
+        _animator.SetTrigger(animation);
+        SetTriggerClientRpc(animation);
+    }
+    
+    [ObserversRpc]
+    private void SetTriggerClientRpc(int animation)
+    {
+        _animator.SetTrigger(animation);
     }
 }
