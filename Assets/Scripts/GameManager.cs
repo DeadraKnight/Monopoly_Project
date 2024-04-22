@@ -24,6 +24,14 @@ public sealed class GameManager : NetworkBehaviour
     [field: SyncVar]
     public int Turn { get; private set; }
 
+    public int consecutiveZeroBalanceTurns = 0;
+
+    [field: SerializeField]
+    public GameObject Loser_View;
+
+    [field: SerializeField]
+    public GameObject Winner_View;
+
 
     private void Awake()
     {
@@ -79,6 +87,32 @@ public sealed class GameManager : NetworkBehaviour
     public void EndTurn()
     {
         Turn = (Turn + 1) % Players.Count;
+
+        if (Players[Turn].Balance <= 0)
+        {
+            consecutiveZeroBalanceTurns++;
+        }
+        else
+        {
+            consecutiveZeroBalanceTurns = 0;
+        }
+
+        Debug.Log("Current consecutive zero balance turns: " + consecutiveZeroBalanceTurns);
+
+        if (consecutiveZeroBalanceTurns >= 3)
+        {
+            Debug.Log("Condition to show Loser_View is met");
+            Loser_View.SetActive(true);
+            StartCoroutine(KickPlayerAfterDelay(10f));
+        }
+
+        // Check if there is only one player left in the game
+        if (Players.Count == 1)
+        {
+            // Activate the Winner_View if there is only one player left
+            Winner_View.SetActive(true);
+        }
+
         BeginTurn();
     }
 
