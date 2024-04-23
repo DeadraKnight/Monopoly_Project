@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public sealed class MainView : View
 {
@@ -11,21 +12,48 @@ public sealed class MainView : View
 
     [SerializeField]
     private Button showOwnedTilesButton;
+    
+    [SerializeField] 
+    private TMP_Text balanceText;
+
+    public GameObject popupAlert; 
+    
+    void Update()
+    {
+        string currentPlayerBalance = GameManager.Instance.Players[GameManager.Instance.Turn].Balance.ToString();
+        balanceText.text = $"Balance: {currentPlayerBalance}";
+    }
 
     public override void Initialize()
     {
         purchaseTileButton.onClick.AddListener(() =>
         {
-            int pawnPositioin = Player.Instance.controlledPawn.currentPosition;
+            int pawnPosition = Player.Instance.controlledPawn.currentPosition;
+            Tile tile = Board.Instance.Tiles[pawnPosition];
 
-            if (Board.Instance.Tiles[pawnPositioin].owningPlayer == null)
+            if (Player.Instance.hasRolledDiceThisTurn == false)
             {
-                Board.Instance.ServerSetTileOwner(pawnPositioin, Player.Instance);
+                popupAlert.GetComponent<PopupAlert>().ShowAlert("You must roll first before purchasing a tile. ");
+            }
+            else if (!tile.IsOwnable)
+            {
+                popupAlert.GetComponent<PopupAlert>().ShowAlert("Tile is not a purchasable tile.");
+            }
+            else if (tile.IsOwned)
+            {
+                popupAlert.GetComponent<PopupAlert>().ShowAlert("Tile is already owned by another player.");
+            } 
+            else
+            {
+                OpenPurchasePanel openPurchasePanel = GetComponent<OpenPurchasePanel>();
+                openPurchasePanel.OpenPanel();
+                //add purchase code to OpenPurchasePanel.PurchaseTile()
             }
         });
 
         endTurnButton.onClick.AddListener(() =>
-        {
+        { 
+            GetComponent<DiceRollerUI>().ClearResults();
             Player.Instance.hasRolledDiceThisTurn = false;
             Player.Instance.controlledPawn.IsEnding();
         });

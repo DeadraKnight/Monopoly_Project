@@ -4,6 +4,7 @@ using FishNet.Transporting.Tugboat;
 using JetBrains.Annotations;
 using System.Linq;
 using UnityEngine;
+using System.Collections;
 
 public sealed class GameManager : NetworkBehaviour
 {
@@ -23,6 +24,14 @@ public sealed class GameManager : NetworkBehaviour
     [field: SerializeField]
     [field: SyncVar]
     public int Turn { get; private set; }
+
+    public int consecutiveZeroBalanceTurns = 0;
+
+    [field: SerializeField]
+    public GameObject Loser_View;
+
+    [field: SerializeField]
+    public GameObject Winner_View;
 
 
     private void Awake()
@@ -48,7 +57,7 @@ public sealed class GameManager : NetworkBehaviour
         }
 
         DidStart = true;
-
+      
         BeginTurn();
     }
 
@@ -70,6 +79,7 @@ public sealed class GameManager : NetworkBehaviour
         {
             Players[i].BeginTurn();
         }
+
     }
 
     /// <summary>
@@ -79,7 +89,48 @@ public sealed class GameManager : NetworkBehaviour
     public void EndTurn()
     {
         Turn = (Turn + 1) % Players.Count;
+
+        Loser_View.SetActive(false);
+        Winner_View.SetActive(false);
+
+        if (Players[Turn].Balance <= 0)
+        {
+            consecutiveZeroBalanceTurns++;
+        }
+        else
+        {
+            consecutiveZeroBalanceTurns = 0;
+        }
+
+        Debug.Log("Current consecutive zero balance turns: " + consecutiveZeroBalanceTurns);
+
+        if (consecutiveZeroBalanceTurns >= 3)
+        {
+            Debug.Log("Condition to show Loser_View is met");
+            Loser_View.SetActive(true);
+            EndTurn();
+            StartCoroutine(KickPlayerAfterDelay(10f));
+        }
+
+        // Check if there is only one player left in the game
+        if (Players.Count == 1)
+        {
+            // Activate the Winner_View if there is only one player left
+            Winner_View.SetActive(true);
+        }
+
         BeginTurn();
+    }
+
+    public IEnumerator KickPlayerAfterDelay(float delay)
+    {
+        Debug.Log("Coroutine started");
+        yield return new WaitForSeconds(delay);
+        Debug.Log("Coroutine finished waiting");
+        Player currentPlayer = Players[Turn];
+        Players.Remove(currentPlayer);
+        currentPlayer.gameObject.SetActive(false);
+        Debug.Log($"Player {currentPlayer} has been kicked from the game");
     }
 
     [Server]
