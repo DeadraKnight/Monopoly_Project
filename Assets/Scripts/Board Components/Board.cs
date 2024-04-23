@@ -67,6 +67,8 @@ public class Board : NetworkBehaviour
 
         ObserversSetTileOwner(tileIndex, value);
 
+        Tiles[tileIndex].owned = true;
+
         Tiles[tileIndex].IsOwned = true;
     }
 
