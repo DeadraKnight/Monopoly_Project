@@ -16,7 +16,7 @@ public sealed class WaitView : View
         }
         else
         {
-            waiting_text.text = $"Waiting on{ curPlayerName} to finish their turn.";
+            waiting_text.text = $"Waiting on {curPlayerName} to finish their turn.";
         }
     }
 }
