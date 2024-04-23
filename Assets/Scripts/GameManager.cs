@@ -44,8 +44,8 @@ public sealed class GameManager : NetworkBehaviour
         if (!IsServer) return;
 
         CanStart = Players.All(player => player.IsReady);
-
-        Debug.Log($"There are {Players.Count} players in the game");
+        //commented out so I can read the console
+        //Debug.Log($"There are {Players.Count} players in the game");
     }
 
     [Server]
@@ -53,7 +53,12 @@ public sealed class GameManager : NetworkBehaviour
     {
         for (int i = 0; i < Players.Count; i++)
         {
-            Players[i].StartGame();
+            Player player = Players[i];
+            if (string.IsNullOrEmpty(player.username))
+            {
+                player.username = RandomNameGenerator.GenerateRandomName();
+            }
+            player.StartGame();
         }
 
         DidStart = true;
