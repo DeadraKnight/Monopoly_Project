@@ -20,8 +20,11 @@ public sealed class MainView : View
     
     void Update()
     {
-        string currentPlayerBalance = GameManager.Instance.Players[GameManager.Instance.Turn].Balance.ToString();
-        balanceText.text = $"Balance: {currentPlayerBalance}";
+        if (GameManager.Instance.Turn >= 0 && GameManager.Instance.Turn < GameManager.Instance.Players.Count)
+        {
+            string currentPlayerBalance = GameManager.Instance.Players[GameManager.Instance.Turn].Balance.ToString();
+            balanceText.text = $"Balance: {currentPlayerBalance}";
+        }
     }
 
     public override void Initialize()
