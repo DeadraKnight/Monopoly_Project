@@ -25,13 +25,13 @@ public sealed class GameManager : NetworkBehaviour
     [field: SyncVar]
     public int Turn { get; private set; }
 
-    public int consecutiveZeroBalanceTurns = 0;
+    [field: SerializeField]
+    public GameObject Winner_View;
 
     [field: SerializeField]
     public GameObject Loser_View;
 
-    [field: SerializeField]
-    public GameObject Winner_View;
+    public bool winnerFlag = false;
 
 
     private void Awake()
@@ -93,46 +93,33 @@ public sealed class GameManager : NetworkBehaviour
         Loser_View.SetActive(false);
         Winner_View.SetActive(false);
 
-        if (Players[Turn].Balance <= 0)
+        // Check if any player has reached the winning condition
+        foreach (var player in Players)
         {
-            consecutiveZeroBalanceTurns++;
-        }
-        else
-        {
-            consecutiveZeroBalanceTurns = 0;
-        }
-
-        Debug.Log("Current consecutive zero balance turns: " + consecutiveZeroBalanceTurns);
-
-        if (consecutiveZeroBalanceTurns >= 3)
-        {
-            Debug.Log("Condition to show Loser_View is met");
-            Loser_View.SetActive(true);
-            EndTurn();
-            StartCoroutine(KickPlayerAfterDelay(10f));
+            if (player.Balance >= 5000)
+            {
+                Winner_View.SetActive(true);
+                winnerFlag = true;
+                break; // Exit the loop once a winner is found
+            }
         }
 
-        // Check if there is only one player left in the game
-        if (Players.Count == 1)
+        if (winnerFlag)
         {
-            // Activate the Winner_View if there is only one player left
-            Winner_View.SetActive(true);
+            foreach (var player in Players)
+            {
+                // Skip the player who reached the winning condition
+                if (player.Balance >= 5000)
+                    continue;
+
+                // Show the Loser_View to players who didn't win
+                Loser_View.SetActive(true);
+            }
         }
 
         BeginTurn();
     }
-
-    public IEnumerator KickPlayerAfterDelay(float delay)
-    {
-        Debug.Log("Coroutine started");
-        yield return new WaitForSeconds(delay);
-        Debug.Log("Coroutine finished waiting");
-        Player currentPlayer = Players[Turn];
-        Players.Remove(currentPlayer);
-        currentPlayer.gameObject.SetActive(false);
-        Debug.Log($"Player {currentPlayer} has been kicked from the game");
-    }
-
+   
     [Server]
     public void ChanceCard()
     {

@@ -11,12 +11,20 @@ public class Board : NetworkBehaviour
     [field: SerializeField]
     public Tile[] Tiles { get; private set; }
 
+    public AudioClip moneySound;
+
+    private AudioSource audioSource;
+
     [SerializeField]
     public int TaxPile = 0;
 
     private void Awake()
     {
         Instance = this;
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.clip = moneySound;
     }
 
     public int Wrap(int index)
@@ -55,6 +63,9 @@ public class Board : NetworkBehaviour
         Tiles[tileIndex].owned = true;
 
         Tiles[tileIndex].IsOwned = true;
+
+        audioSource.volume = 0.5f;
+        audioSource.Play();
     }
 
     [ObserversRpc(BufferLast = true)]

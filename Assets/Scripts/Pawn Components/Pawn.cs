@@ -22,6 +22,12 @@ public sealed class Pawn : NetworkBehaviour
 
     private bool _isMoving;
 
+    // Sound for moving the pawn
+    public AudioClip moveSound;
+
+    // AudioSource component for playing sound effect
+    private AudioSource audioSource;
+
     /// <summary>
     /// This will set the players avatar in order of the Index of players.
     /// </summary>
@@ -37,6 +43,11 @@ public sealed class Pawn : NetworkBehaviour
         // Find the jail waypoint in the scene by its name
         jailWaypoint = GameObject.Find("Jail_Position");
         freeParkingWaypoint = GameObject.Find("Free_Parking_Position");
+
+        // Add AudioSource component to the game object
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.clip = moveSound;
     }
 
     /// <summary>
@@ -54,6 +65,10 @@ public sealed class Pawn : NetworkBehaviour
         if (_isMoving) return;
 
         _isMoving = true;
+
+        // Play the move sound effect
+        audioSource.volume = 0.5f;
+        audioSource.Play();
 
         Tile[] tiles = Board.Instance.Slice(currentPosition, (currentPosition + steps) % Board.Instance.Tiles.Length);
 
