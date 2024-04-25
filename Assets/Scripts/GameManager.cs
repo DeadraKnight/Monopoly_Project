@@ -25,12 +25,6 @@ public sealed class GameManager : NetworkBehaviour
     [field: SyncVar]
     public int Turn { get; private set; }
 
-    [field: SerializeField]
-    public GameObject Winner_View;
-
-    [field: SerializeField]
-    public GameObject Loser_View;
-
     public bool winnerFlag = false;
 
 
@@ -90,15 +84,11 @@ public sealed class GameManager : NetworkBehaviour
     {
         Turn = (Turn + 1) % Players.Count;
 
-        Loser_View.SetActive(false);
-        Winner_View.SetActive(false);
-
         // Check if any player has reached the winning condition
         foreach (var player in Players)
         {
             if (player.Balance >= 5000)
             {
-                Winner_View.SetActive(true);
                 winnerFlag = true;
                 break; // Exit the loop once a winner is found
             }
@@ -111,9 +101,6 @@ public sealed class GameManager : NetworkBehaviour
                 // Skip the player who reached the winning condition
                 if (player.Balance >= 5000)
                     continue;
-
-                // Show the Loser_View to players who didn't win
-                Loser_View.SetActive(true);
             }
         }
 
