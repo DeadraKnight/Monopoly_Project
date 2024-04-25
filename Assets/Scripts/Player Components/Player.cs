@@ -100,7 +100,20 @@ public sealed class Player : NetworkBehaviour
     [TargetRpc]
     private void TargetBegin(NetworkConnection networkConnection, bool canPlay)
     {
-        if (canPlay)
+        foreach (var player in GameManager.Instance.Players)
+        {
+           if (player.Balance >= 5000)
+           {
+                GameManager.Instance.winner = true;
+           }
+        }
+        
+        if (GameManager.Instance.winner == true)
+        {
+            ViewManager.Instance.Show<WinnerView>();
+            GameManager.Instance.BeginTurn();
+        }
+        else if (canPlay)
         {
             ViewManager.Instance.Show<MainView>();
         }

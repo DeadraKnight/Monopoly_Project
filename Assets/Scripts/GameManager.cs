@@ -25,7 +25,7 @@ public sealed class GameManager : NetworkBehaviour
     [field: SyncVar]
     public int Turn { get; private set; }
 
-    public bool winnerFlag = false;
+    public bool winner = false;
 
 
     private void Awake()
@@ -83,30 +83,9 @@ public sealed class GameManager : NetworkBehaviour
     public void EndTurn()
     {
         Turn = (Turn + 1) % Players.Count;
-
-        // Check if any player has reached the winning condition
-        foreach (var player in Players)
-        {
-            if (player.Balance >= 5000)
-            {
-                winnerFlag = true;
-                break; // Exit the loop once a winner is found
-            }
-        }
-
-        if (winnerFlag)
-        {
-            foreach (var player in Players)
-            {
-                // Skip the player who reached the winning condition
-                if (player.Balance >= 5000)
-                    continue;
-            }
-        }
-
         BeginTurn();
     }
-   
+
     [Server]
     public void ChanceCard()
     {
