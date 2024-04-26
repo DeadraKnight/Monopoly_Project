@@ -40,6 +40,6 @@ public class OpenPurchasePanel : MonoBehaviour
         if (Board.Instance.Tiles[pawnPositioin].owningPlayer == null)
         {
             Board.Instance.ServerSetTileOwner(pawnPositioin, Player.Instance.controlledPawn.controllingPlayer);
-        };
+        }
     }
 }
