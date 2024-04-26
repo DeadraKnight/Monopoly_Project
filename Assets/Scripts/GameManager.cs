@@ -4,6 +4,7 @@ using FishNet.Transporting.Tugboat;
 using JetBrains.Annotations;
 using System.Linq;
 using UnityEngine;
+using System.Collections;
 
 public sealed class GameManager : NetworkBehaviour
 {
@@ -23,6 +24,8 @@ public sealed class GameManager : NetworkBehaviour
     [field: SerializeField]
     [field: SyncVar]
     public int Turn { get; private set; }
+    [SyncVar]
+    public bool winner = false;
 
 
     private void Awake()
@@ -35,8 +38,8 @@ public sealed class GameManager : NetworkBehaviour
         if (!IsServer) return;
 
         CanStart = Players.All(player => player.IsReady);
-
-        Debug.Log($"There are {Players.Count} players in the game");
+        //commented out so I can read the console
+        //Debug.Log($"There are {Players.Count} players in the game");
     }
 
     [Server]
@@ -44,11 +47,16 @@ public sealed class GameManager : NetworkBehaviour
     {
         for (int i = 0; i < Players.Count; i++)
         {
-            Players[i].StartGame();
+            Player player = Players[i];
+            if (string.IsNullOrEmpty(player.username))
+            {
+                player.username = RandomNameGenerator.GenerateRandomName();
+            }
+            player.StartGame();
         }
 
         DidStart = true;
-
+      
         BeginTurn();
     }
 
@@ -70,6 +78,7 @@ public sealed class GameManager : NetworkBehaviour
         {
             Players[i].BeginTurn();
         }
+
     }
 
     /// <summary>

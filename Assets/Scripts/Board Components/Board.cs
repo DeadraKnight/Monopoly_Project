@@ -11,12 +11,20 @@ public class Board : NetworkBehaviour
     [field: SerializeField]
     public Tile[] Tiles { get; private set; }
 
+    public AudioClip moneySound;
+
+    private AudioSource audioSource;
+
     [SerializeField]
     public int TaxPile = 0;
 
     private void Awake()
     {
         Instance = this;
+
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+        audioSource.clip = moneySound;
     }
 
     public int Wrap(int index)
@@ -44,21 +52,6 @@ public class Board : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     public void ServerSetTileOwner(int tileIndex, Player value)
     {
-
-        // Check if the tile can be owned
-        if (Tiles[tileIndex].CantBeOwned)
-        {
-            Debug.Log("This tile cannot be bought!");
-            return;
-        }
-
-        // Check if the player has enough money to buy the tile
-        if (value.Balance < Tiles[tileIndex].cost)
-        {
-            Debug.Log("You don't have enough money to buy this tile!");
-            return;
-        }
-
         // Subtract the cost of the tile from the player's money
         value.Balance -= Tiles[tileIndex].cost;
 
@@ -67,7 +60,12 @@ public class Board : NetworkBehaviour
 
         ObserversSetTileOwner(tileIndex, value);
 
+        Tiles[tileIndex].owned = true;
+
         Tiles[tileIndex].IsOwned = true;
+
+        audioSource.volume = 0.5f;
+        audioSource.Play();
     }
 
     [ObserversRpc(BufferLast = true)]

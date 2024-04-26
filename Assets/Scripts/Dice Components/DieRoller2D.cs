@@ -1,10 +1,8 @@
-using FishNet.Component.Animating;
-using FishNet.Component.Transforming;
 using System;
-using TMPro;
+using FishNet.Object;
 using UnityEngine;
 
-public class DieRoller2D : MonoBehaviour
+public class DieRoller2D : NetworkBehaviour
 {
     public event Action<int> OnRoll;
     public int Result { get; private set; }
@@ -29,7 +27,7 @@ public class DieRoller2D : MonoBehaviour
     }
 
     Rigidbody2D _rigidbody2D;
-    NetworkAnimator _networkAnimator;
+    Animator _animator;
     static readonly int RollingAnimation = Animator.StringToHash("Rolling");
     static readonly int[] ResultAnimations = new[]
     {
@@ -49,7 +47,7 @@ public class DieRoller2D : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _rigidbody2D.isKinematic = true;
-        _networkAnimator = GetComponent<NetworkAnimator>();
+        _animator = GetComponent<Animator>();
         _audioClipPlayer = GetComponent<RandomAudioClipPlayer>();
     }
 
@@ -72,13 +70,15 @@ public class DieRoller2D : MonoBehaviour
     {
         _rigidbody2D.isKinematic = false;
         _rigidbody2D.AddForce(GetRollForce());
-        _networkAnimator.SetTrigger(RollingAnimation);
+        _animator.SetTrigger(RollingAnimation);
+        SetTriggerServerRpc(RollingAnimation);
         _isRolling = true;
     }
 
     void RollWithoutPhysics()
     {
-        _networkAnimator.SetTrigger(RollingAnimation);
+        _animator.SetTrigger(RollingAnimation);
+        SetTriggerServerRpc(RollingAnimation);
         _isRolling = true;
         _timeRemaining = _rollTime;
     }
@@ -88,7 +88,8 @@ public class DieRoller2D : MonoBehaviour
         _isRolling = false;
         _rigidbody2D.isKinematic = true;
         _rigidbody2D.velocity = Vector2.zero;
-        _networkAnimator.SetTrigger(ResultAnimations[Result - 1]);
+        _animator.SetTrigger(ResultAnimations[Result - 1]);
+        SetTriggerServerRpc(ResultAnimations[Result - 1]);
         OnRoll?.Invoke(Result);
     }
     
@@ -97,5 +98,18 @@ public class DieRoller2D : MonoBehaviour
         return new Vector2(
             UnityEngine.Random.Range(_rollForceMin.x, _rollForceMax.x),
             UnityEngine.Random.Range(_rollForceMin.y, _rollForceMax.y));
+    }
+    
+    [ServerRpc (RequireOwnership = false)]
+    private void SetTriggerServerRpc(int animation)
+    {
+        _animator.SetTrigger(animation);
+        SetTriggerClientRpc(animation);
+    }
+    
+    [ObserversRpc]
+    private void SetTriggerClientRpc(int animation)
+    {
+        _animator.SetTrigger(animation);
     }
 }

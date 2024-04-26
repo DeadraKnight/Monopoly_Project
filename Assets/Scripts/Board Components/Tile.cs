@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Tile : MonoBehaviour
 {
@@ -24,10 +25,12 @@ public class Tile : MonoBehaviour
     [SerializeField]
     public int sellPrice; // The price the tile can be sold for
 
+    [SerializeField]
+    public bool owned; // If the tile is owned
     public bool IsOwned { get; set; }
 
-    [SerializeField]
-    public bool CantBeOwned;
+    [FormerlySerializedAs("CantBeOwned")] [SerializeField]
+    public bool IsOwnable;
 
     [SerializeField]
     public bool ChanceTile;
@@ -43,6 +46,7 @@ public class Tile : MonoBehaviour
 
     private void Start()
     {
+        sprite = spriteRenderer.sprite;
         _defaultColor = spriteRenderer.sharedMaterial.color;
     }
 

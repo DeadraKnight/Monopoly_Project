@@ -8,7 +8,5 @@ public class ExitButton : MonoBehaviour
     public void OnExitButtonClick()
     {
         Panel.SetActive(false); // Set the visibility of the rules panel to false
-    }
-
-  
+    } 
 }

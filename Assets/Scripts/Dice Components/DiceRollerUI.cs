@@ -41,7 +41,7 @@ public class DiceRollerUI : MonoBehaviour
         
     }
 
-    void ClearResults()
+    public void ClearResults()
     {
         _resultsText.text = "";
         _doublesText.text = "";
