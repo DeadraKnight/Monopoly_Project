@@ -15,6 +15,9 @@ public sealed class Player : NetworkBehaviour
     [SyncVar]
     public int Balance = 1500;
 
+    [SyncVar]
+    public bool IsWinner = false;
+
     [field: SyncVar]
     public bool IsReady
     {

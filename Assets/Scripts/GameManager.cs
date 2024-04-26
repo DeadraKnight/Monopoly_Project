@@ -24,7 +24,7 @@ public sealed class GameManager : NetworkBehaviour
     [field: SerializeField]
     [field: SyncVar]
     public int Turn { get; private set; }
-
+    [SyncVar]
     public bool winner = false;
 
 
