@@ -30,16 +30,16 @@ public class OpenPurchasePanel : MonoBehaviour
     public void RenderTileSprite()
     {
         Tile tile = Board.Instance.Tiles[Player.Instance.controlledPawn.currentPosition];
-        PurchasePanel.GetComponent<Image>().sprite = tile.sprite;
+        PurchasePanel.GetComponent<Image>().sprite = tile.panelSprite;
     }
     
     public void PurchaseTile()
     {
-        int pawnPositioin = Player.Instance.controlledPawn.currentPosition;
+        int pawnPosition = Player.Instance.controlledPawn.currentPosition;
 
-        if (Board.Instance.Tiles[pawnPositioin].owningPlayer == null)
+        if (Board.Instance.Tiles[pawnPosition].owningPlayer == null)
         {
-            Board.Instance.ServerSetTileOwner(pawnPositioin, Player.Instance.controlledPawn.controllingPlayer);
+            Board.Instance.ServerSetTileOwner(pawnPosition, Player.Instance.controlledPawn.controllingPlayer);
         }
     }
 }

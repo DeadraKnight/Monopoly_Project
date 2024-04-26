@@ -10,6 +10,9 @@ public class Tile : MonoBehaviour
 
     [SerializeField]
     private SpriteRenderer spriteRenderer;
+    
+    [FormerlySerializedAs("sprite")] [SerializeField]
+    public Sprite panelSprite;
 
     private Color _defaultColor;
 
@@ -41,12 +44,8 @@ public class Tile : MonoBehaviour
     [SerializeField]
     public int TaxCost;
 
-    [SerializeField]
-    public Sprite sprite;
-
     private void Start()
     {
-        sprite = spriteRenderer.sprite;
         _defaultColor = spriteRenderer.sharedMaterial.color;
     }
 

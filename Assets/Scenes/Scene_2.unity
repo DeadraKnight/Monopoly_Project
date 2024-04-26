@@ -15940,6 +15940,7 @@ MonoBehaviour:
   - {fileID: 6762454994616094758}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875794041884513}
+  panelSprite: {fileID: 0}
   tileName: Community Chest
   cost: 0
   rent: 0
@@ -15949,7 +15950,6 @@ MonoBehaviour:
   ChanceTile: 1
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240296427811764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15969,6 +15969,7 @@ MonoBehaviour:
   - {fileID: 6762454994611297263}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875794041242792}
+  panelSprite: {fileID: 21300000, guid: c2ea1ce8e3507bd43b715a844ec89ced, type: 3}
   tileName: States Ave.
   cost: 140
   rent: 50
@@ -15978,7 +15979,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240296467263254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15998,6 +15998,7 @@ MonoBehaviour:
   - {fileID: 6762454994671454029}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793962997770}
+  panelSprite: {fileID: 21300000, guid: 4e98d7605be90bc49b0f3ca1e63bb0b2, type: 3}
   tileName: Pennsylvania Ave.
   cost: 320
   rent: 170
@@ -16007,7 +16008,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240296475917498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16027,6 +16027,7 @@ MonoBehaviour:
   - {fileID: 6762454994663331041}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793954868134}
+  panelSprite: {fileID: 21300000, guid: c5c249bef8a819142850dd08bd47f499, type: 3}
   tileName: Oriental Ave.
   cost: 100
   rent: 30
@@ -16036,7 +16037,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240296561222811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16056,6 +16056,7 @@ MonoBehaviour:
   - {fileID: 6762454994744708288}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875794174694279}
+  panelSprite: {fileID: 21300000, guid: fc9bba657f54d58488fcd371a596ffda, type: 3}
   tileName: Ventnor Ave.
   cost: 260
   rent: 130
@@ -16065,7 +16066,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240296596414261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16085,6 +16085,7 @@ MonoBehaviour:
   - {fileID: 6762454994710574958}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875794140555305}
+  panelSprite: {fileID: 21300000, guid: a4bb9d73c35551c41841e0c3a38a7552, type: 3}
   tileName: Mediterranean Ave.
   cost: 60
   rent: 20
@@ -16094,7 +16095,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240296603125080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16114,6 +16114,7 @@ MonoBehaviour:
   - {fileID: 6762454994805107971}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875794096681540}
+  panelSprite: {fileID: 0}
   tileName: Pennsylvania Railroad
   cost: 0
   rent: 0
@@ -16123,7 +16124,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 1
   TaxCost: 120
-  sprite: {fileID: 0}
 --- !u!114 &7432240296609564179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16143,6 +16143,7 @@ MonoBehaviour:
   - {fileID: 6762454994797129288}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875794088669455}
+  panelSprite: {fileID: 0}
   tileName: Chance
   cost: 0
   rent: 0
@@ -16152,7 +16153,6 @@ MonoBehaviour:
   ChanceTile: 1
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240296687516215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16172,6 +16172,7 @@ MonoBehaviour:
   - {fileID: 6762454994350510700}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793780493611}
+  panelSprite: {fileID: 21300000, guid: be433db64f8bf944392f11902b6abe0e, type: 3}
   tileName: Vermont Ave.
   cost: 100
   rent: 30
@@ -16181,7 +16182,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240296776403892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16201,6 +16201,7 @@ MonoBehaviour:
   - {fileID: 6762454994353431535}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793649204392}
+  panelSprite: {fileID: 0}
   tileName: Free Parking
   cost: 0
   rent: 0
@@ -16210,7 +16211,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240296827800074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16230,6 +16230,7 @@ MonoBehaviour:
   - {fileID: 6762454994478228049}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793903992086}
+  panelSprite: {fileID: 0}
   tileName: Community Chest
   cost: 0
   rent: 0
@@ -16239,7 +16240,6 @@ MonoBehaviour:
   ChanceTile: 1
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240296842283212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16259,6 +16259,7 @@ MonoBehaviour:
   - {fileID: 6762454994421801111}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793851760592}
+  panelSprite: {fileID: 0}
   tileName: Short Line
   cost: 0
   rent: 0
@@ -16268,7 +16269,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 1
   TaxCost: 120
-  sprite: {fileID: 0}
 --- !u!114 &7432240296909275404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16288,6 +16288,7 @@ MonoBehaviour:
   - {fileID: 6762454994490501463}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793782076944}
+  panelSprite: {fileID: 21300000, guid: 87d7f38d93a18674792b0077cdda0f1a, type: 3}
   tileName: Indiana Ave.
   cost: 220
   rent: 100
@@ -16297,7 +16298,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240296947836222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16317,6 +16317,7 @@ MonoBehaviour:
   - {fileID: 6762454995130928485}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793487139362}
+  panelSprite: {fileID: 0}
   tileName: 
   cost: 0
   rent: 0
@@ -16326,7 +16327,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240296993409730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16346,6 +16346,7 @@ MonoBehaviour:
   - {fileID: 6762454995109536409}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793465753054}
+  panelSprite: {fileID: 21300000, guid: 27f3a747b9c5c5c41b03b882eba3cff4, type: 3}
   tileName: Marvin Gardens
   cost: 280
   rent: 140
@@ -16355,7 +16356,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240297008868615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16375,6 +16375,7 @@ MonoBehaviour:
   - {fileID: 6762454995196282204}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793414117915}
+  panelSprite: {fileID: 21300000, guid: f4fa5fbfa7576574b8a0f8b7968e9d4d, type: 3}
   tileName: Tennessee Ave.
   cost: 180
   rent: 80
@@ -16384,7 +16385,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240297034814227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16404,6 +16404,7 @@ MonoBehaviour:
   - {fileID: 6762454995169819464}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793387643919}
+  panelSprite: {fileID: 0}
   tileName: Go
   cost: 0
   rent: 0
@@ -16413,7 +16414,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240297141111185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16433,6 +16433,7 @@ MonoBehaviour:
   - {fileID: 6762454995339289034}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793561321101}
+  panelSprite: {fileID: 0}
   tileName: Water_Works
   cost: 150
   rent: 0
@@ -16442,7 +16443,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 1
   TaxCost: 200
-  sprite: {fileID: 0}
 --- !u!114 &7432240297166817793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16462,6 +16462,7 @@ MonoBehaviour:
   - {fileID: 6762454995348218458}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793570217245}
+  panelSprite: {fileID: 21300000, guid: 0c446634cffefda4691789a54c5ce6f9, type: 3}
   tileName: Illinois Ave.
   cost: 240
   rent: 120
@@ -16471,7 +16472,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240297173561971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16491,6 +16491,7 @@ MonoBehaviour:
   - {fileID: 6762454995308419624}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793526244719}
+  panelSprite: {fileID: 0}
   tileName: Electric Company
   cost: 150
   rent: 0
@@ -16500,7 +16501,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 1
   TaxCost: 150
-  sprite: {fileID: 0}
 --- !u!114 &7432240297212233796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16520,6 +16520,7 @@ MonoBehaviour:
   - {fileID: 6762454994858729503}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793214947160}
+  panelSprite: {fileID: 21300000, guid: 0b6ef5b2e96a4864b83808a2d4a7462a, type: 3}
   tileName: Atlantic Ave.
   cost: 260
   rent: 130
@@ -16529,7 +16530,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240297214778132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16549,6 +16549,7 @@ MonoBehaviour:
   - {fileID: 6762454994863502159}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793215548424}
+  panelSprite: {fileID: 21300000, guid: 30c886570edbd014e93334aade61a6a2, type: 3}
   tileName: St. Jame Place
   cost: 180
   rent: 80
@@ -16558,7 +16559,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240297244094108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16578,6 +16578,7 @@ MonoBehaviour:
   - {fileID: 6762454994825299655}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793177319808}
+  panelSprite: {fileID: 21300000, guid: 18d42fb4986d19f48abd7914786da0f9, type: 3}
   tileName: Boardwalk
   cost: 400
   rent: 220
@@ -16587,7 +16588,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240297448769180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16607,6 +16607,7 @@ MonoBehaviour:
   - {fileID: 6762454995032092359}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793249923456}
+  panelSprite: {fileID: 0}
   tileName: B&O_Railroad
   cost: 0
   rent: 0
@@ -16616,7 +16617,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 1
   TaxCost: 120
-  sprite: {fileID: 0}
 --- !u!114 &7432240297550599519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16636,6 +16636,7 @@ MonoBehaviour:
   - {fileID: 6762454995736198404}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792880247363}
+  panelSprite: {fileID: 0}
   tileName: Chance
   cost: 0
   rent: 0
@@ -16645,7 +16646,6 @@ MonoBehaviour:
   ChanceTile: 1
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240297560591800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16665,6 +16665,7 @@ MonoBehaviour:
   - {fileID: 6762454995758638563}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792906893988}
+  panelSprite: {fileID: 0}
   tileName: Community Chest
   cost: 0
   rent: 0
@@ -16674,7 +16675,6 @@ MonoBehaviour:
   ChanceTile: 1
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240297575915369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16694,6 +16694,7 @@ MonoBehaviour:
   - {fileID: 6762454995710785330}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792854870133}
+  panelSprite: {fileID: 21300000, guid: da5be57866ecc9b41bbcc84f9043f698, type: 3}
   tileName: Ketucky Ave.
   cost: 220
   rent: 100
@@ -16703,7 +16704,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240297669134810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16723,6 +16723,7 @@ MonoBehaviour:
   - {fileID: 6762454995785392513}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793067900614}
+  panelSprite: {fileID: 21300000, guid: bf77be30537a48448a473bd8ac526393, type: 3}
   tileName: New York Ave.
   cost: 200
   rent: 90
@@ -16732,7 +16733,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240297683915077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16752,6 +16752,7 @@ MonoBehaviour:
   - {fileID: 6762454995871217950}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793015301721}
+  panelSprite: {fileID: 0}
   tileName: Income Tax
   cost: 0
   rent: 0
@@ -16761,7 +16762,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 1
   TaxCost: 100
-  sprite: {fileID: 0}
 --- !u!114 &7432240297861101513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16781,6 +16781,7 @@ MonoBehaviour:
   - {fileID: 6762454995459219346}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792603300053}
+  panelSprite: {fileID: 0}
   tileName: Go to Jail!
   cost: 0
   rent: 0
@@ -16790,7 +16791,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240297880302305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16810,6 +16810,7 @@ MonoBehaviour:
   - {fileID: 6762454995541203642}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792823698941}
+  panelSprite: {fileID: 0}
   tileName: Luxury Tax
   cost: 0
   rent: 0
@@ -16819,7 +16820,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 1
   TaxCost: 250
-  sprite: {fileID: 0}
 --- !u!114 &7432240297938561962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16839,6 +16839,7 @@ MonoBehaviour:
   - {fileID: 6762454995515966449}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792798473398}
+  panelSprite: {fileID: 21300000, guid: fcd2e38a672557f45a1a1bac73459099, type: 3}
   tileName: Pacific Ave.
   cost: 300
   rent: 150
@@ -16848,7 +16849,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240298006075610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16868,6 +16868,7 @@ MonoBehaviour:
   - {fileID: 6762454995583234177}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792731484102}
+  panelSprite: {fileID: 0}
   tileName: Reading Railroad
   cost: 0
   rent: 0
@@ -16877,7 +16878,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 1
   TaxCost: 120
-  sprite: {fileID: 0}
 --- !u!114 &7432240298105856368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16897,6 +16897,7 @@ MonoBehaviour:
   - {fileID: 6762454996287113515}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792361625196}
+  panelSprite: {fileID: 21300000, guid: f4a6ecf84ad33cb47ae1d8937a604cbd, type: 3}
   tileName: St. Charles Place
   cost: 140
   rent: 50
@@ -16906,7 +16907,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240298119598484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16926,6 +16926,7 @@ MonoBehaviour:
   - {fileID: 6762454996239792591}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792310134408}
+  panelSprite: {fileID: 21300000, guid: dd46866552618484ea8996f95da853e0, type: 3}
   tileName: Virgina Ave.
   cost: 160
   rent: 70
@@ -16935,7 +16936,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240298367951227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16955,6 +16955,7 @@ MonoBehaviour:
   - {fileID: 6762454996016662816}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792087012967}
+  panelSprite: {fileID: 21300000, guid: d3362fc1f810f6e43920659b4d92d3cd, type: 3}
   tileName: Baltic Ave.
   cost: 60
   rent: 20
@@ -16964,7 +16965,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240298431034769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16984,6 +16984,7 @@ MonoBehaviour:
   - {fileID: 6762454996096130506}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792300688013}
+  panelSprite: {fileID: 21300000, guid: a901a24e3bf88584cb3b49e831896296, type: 3}
   tileName: Connecticut Ave.
   cost: 120
   rent: 50
@@ -16993,7 +16994,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240298459521958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17013,6 +17013,7 @@ MonoBehaviour:
   - {fileID: 6762454996059868157}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792264402106}
+  panelSprite: {fileID: 0}
   tileName: Chance
   cost: 0
   rent: 0
@@ -17022,7 +17023,6 @@ MonoBehaviour:
   ChanceTile: 1
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240298462296769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17042,6 +17042,7 @@ MonoBehaviour:
   - {fileID: 6762454996056478362}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792265235933}
+  panelSprite: {fileID: 21300000, guid: fb61f27d834cd4e4b9acefaccffead0f, type: 3}
   tileName: Park Place
   cost: 350
   rent: 200
@@ -17051,7 +17052,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!114 &7432240298486992014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17071,6 +17071,7 @@ MonoBehaviour:
   - {fileID: 6762454996133487829}
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792208034706}
+  panelSprite: {fileID: 21300000, guid: 4875707ffb222104a89f6ba02ebc6514, type: 3}
   tileName: North Carolina Ave.
   cost: 300
   rent: 150
@@ -17080,7 +17081,6 @@ MonoBehaviour:
   ChanceTile: 0
   TaxTile: 0
   TaxCost: 0
-  sprite: {fileID: 0}
 --- !u!4 &7437586937981195911
 Transform:
   m_ObjectHideFlags: 0
