@@ -16,7 +16,7 @@ public class OpenPurchasePanel : MonoBehaviour
         //TODO: assign text from tile
         
         RenderTileSprite();
-        purchaseButton.onClick.AddListener(PurchaseTile);
+        purchaseButton.onClick.RemoveListener(PurchaseTile);
         PurchasePanel.blocksRaycasts = true;
         PurchasePanel.alpha = 1;
     }
@@ -35,14 +35,11 @@ public class OpenPurchasePanel : MonoBehaviour
     
     public void PurchaseTile()
     {
-        int tileIndex = Player.Instance.controlledPawn.currentPosition;
-        Player player = Player.Instance;
+        int pawnPositioin = Player.Instance.controlledPawn.currentPosition;
 
-        // Check if the player has enough money to buy the tile
-        if (player.Balance < Board.Instance.Tiles[tileIndex].cost)
+        if (Board.Instance.Tiles[pawnPositioin].owningPlayer == null)
         {
-            return;
-        }
-        Board.Instance.ServerSetTileOwner(tileIndex, player);
+            Board.Instance.ServerSetTileOwner(pawnPositioin, Player.Instance.controlledPawn.controllingPlayer);
+        };
     }
 }

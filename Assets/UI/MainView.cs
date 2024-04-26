@@ -20,8 +20,11 @@ public sealed class MainView : View
     
     void Update()
     {
-        string currentPlayerBalance = GameManager.Instance.Players[GameManager.Instance.Turn].Balance.ToString();
-        balanceText.text = $"Balance: {currentPlayerBalance}";
+        if (GameManager.Instance.Turn >= 0 && GameManager.Instance.Turn < GameManager.Instance.Players.Count)
+        {
+            string currentPlayerBalance = GameManager.Instance.Players[GameManager.Instance.Turn].Balance.ToString();
+            balanceText.text = $"Balance: {currentPlayerBalance}";
+        }
     }
 
     public override void Initialize()
@@ -31,7 +34,7 @@ public sealed class MainView : View
             int pawnPosition = Player.Instance.controlledPawn.currentPosition;
             Tile tile = Board.Instance.Tiles[pawnPosition];
 
-            if (Player.Instance.hasRolledDiceThisTurn == false)
+            if (Player.Instance.controlledPawn.controllingPlayer.hasRolledDiceThisTurn == false)
             {
                 popupAlert.GetComponent<PopupAlert>().ShowAlert("You must roll first before purchasing a tile. ");
             }
@@ -39,7 +42,7 @@ public sealed class MainView : View
             {
                 popupAlert.GetComponent<PopupAlert>().ShowAlert("Tile is not a purchasable tile.");
             }
-            else if (tile.IsOwned)
+            else if (tile.owned)
             {
                 popupAlert.GetComponent<PopupAlert>().ShowAlert("Tile is already owned by another player.");
             } 

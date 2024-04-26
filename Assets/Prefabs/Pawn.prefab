@@ -138,11 +138,13 @@ MonoBehaviour:
   controllingPlayer: {fileID: 0}
   currentPosition: 0
   jailWaypoint: {fileID: 0}
+  freeParkingWaypoint: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: 729180afea89bd14c87ba77a84cf7acd, type: 3}
   - {fileID: 21300000, guid: a740b74f3354fb74f89b86ee0ec3d35a, type: 3}
   - {fileID: 21300000, guid: b96e944faf20f5641ba5621553db63b8, type: 3}
   - {fileID: 21300000, guid: 9bcf33b540e88a542a373d66d3e47d4a, type: 3}
+  moveSound: {fileID: 8300000, guid: 76439d89272a8854a9345ec6c340d541, type: 3}
 --- !u!222 &8115227469252947675
 CanvasRenderer:
   m_ObjectHideFlags: 0
