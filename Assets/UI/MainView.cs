@@ -42,23 +42,30 @@ public sealed class MainView : View
             {
                 popupAlert.GetComponent<PopupAlert>().ShowAlert("Tile is not a purchasable tile.");
             }
-            else if (tile.owned)
+            else if (tile.isOwned)
             {
-                popupAlert.GetComponent<PopupAlert>().ShowAlert("Tile is already owned by another player.");
+                popupAlert.GetComponent<PopupAlert>().ShowAlert($"Tile is already owned by {tile.owningPlayer.username}");
             } 
             else
             {
+                GetComponent<DiceRollerUI>().ClearResults();
                 OpenPurchasePanel openPurchasePanel = GetComponent<OpenPurchasePanel>();
                 openPurchasePanel.OpenPanel();
-                //add purchase code to OpenPurchasePanel.PurchaseTile()
             }
         });
 
         endTurnButton.onClick.AddListener(() =>
-        { 
-            GetComponent<DiceRollerUI>().ClearResults();
-            Player.Instance.hasRolledDiceThisTurn = false;
-            Player.Instance.controlledPawn.IsEnding();
+        {
+            if (Player.Instance.hasRolledDiceThisTurn)
+            {
+                GetComponent<DiceRollerUI>().ClearResults();
+                Player.Instance.hasRolledDiceThisTurn = false;
+                Player.Instance.controlledPawn.IsEnding();
+            }
+            else
+            {
+                popupAlert.GetComponent<PopupAlert>().ShowAlert("You must roll the dice before ending your turn.");
+            }
         });
 
         base.Initialize();

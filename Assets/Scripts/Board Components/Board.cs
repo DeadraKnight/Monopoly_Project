@@ -58,12 +58,11 @@ public class Board : NetworkBehaviour
         // Add the tile to the player's ownedTiles list
         value.ownedTiles.Add(Tiles[tileIndex]);
 
+        Tiles[tileIndex].owningPlayer = value;
         ObserversSetTileOwner(tileIndex, value);
 
-        Tiles[tileIndex].owned = true;
-
-        Tiles[tileIndex].IsOwned = true;
-
+        Tiles[tileIndex].isOwned = true;
+        
         audioSource.volume = 0.5f;
         audioSource.Play();
     }
@@ -72,5 +71,9 @@ public class Board : NetworkBehaviour
     private void ObserversSetTileOwner(int tileIndex, Player value)
     {
         Tiles[tileIndex].owningPlayer = value;
+        //this is a sync var and is set on the server but isn't syncing so I added it here?????
+        //took an hour to find this fix
+        Tiles[tileIndex].isOwned = true;
+
     }
 }

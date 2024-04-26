@@ -1,3 +1,4 @@
+using FishNet.Object.Synchronizing;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -6,6 +7,7 @@ public class Tile : MonoBehaviour
     [field: SerializeField]
     public Transform[] PawnPositions { get; private set; }
 
+    [SyncVar]
     public Player owningPlayer;
 
     [SerializeField]
@@ -28,9 +30,10 @@ public class Tile : MonoBehaviour
     [SerializeField]
     public int sellPrice; // The price the tile can be sold for
 
+    [FormerlySerializedAs("owned")]
     [SerializeField]
-    public bool owned; // If the tile is owned
-    public bool IsOwned { get; set; }
+    [SyncVar]
+    public bool isOwned; // If the tile is owned
 
     [FormerlySerializedAs("CantBeOwned")] [SerializeField]
     public bool IsOwnable;
@@ -54,7 +57,7 @@ public class Tile : MonoBehaviour
         if (owningPlayer == null)
         {
             spriteRenderer.material.color = _defaultColor;
-            IsOwned = false; // The tile is not owned
+            isOwned = false; // The tile is not owned
             return;
         }
 

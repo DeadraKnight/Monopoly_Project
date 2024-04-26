@@ -104,7 +104,7 @@ public sealed class Pawn : NetworkBehaviour
                 // Call the ChanceCard method
                 GameManager.Instance.ChanceCard();
             }
-            if (Board.Instance.Tiles[currentPosition].owned == true)
+            if (Board.Instance.Tiles[currentPosition].isOwned == true)
             {
                 PayRent();    
             }
