@@ -40,6 +40,9 @@ public sealed class Player : NetworkBehaviour
     [SyncVar]
     public bool isInJail = false;
 
+    [SyncVar]
+    public bool isWinner = false;
+
     public Color pawnColor; // stores the chosen color
 
     public List<Tile> ownedTiles = new List<Tile>();
@@ -109,6 +112,7 @@ public sealed class Player : NetworkBehaviour
            if (player.Balance >= 5000)
            {
                 GameManager.Instance.winner = true;
+                GameManager.Instance.CheckForWinner();
            }
         }
         

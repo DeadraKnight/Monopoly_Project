@@ -92,6 +92,19 @@ public sealed class GameManager : NetworkBehaviour
     }
 
     [Server]
+    public void CheckForWinner()
+    {
+        // Find the player with the maximum balance
+        Player playerWithMaxBalance = Players.OrderByDescending(player => player.Balance).FirstOrDefault();
+
+        if (playerWithMaxBalance != null)
+        {
+            // Set the isWinner property of the player with the maximum balance to true
+            playerWithMaxBalance.isWinner = true;
+        }
+    }
+
+    [Server]
     public void ChanceCard()
     {
         //switch statement to determine the outcome of the chance card
