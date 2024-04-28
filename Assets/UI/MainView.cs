@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections.Generic;
 
 public sealed class MainView : View
 {
@@ -16,14 +17,54 @@ public sealed class MainView : View
     [SerializeField] 
     private TMP_Text balanceText;
 
-    public GameObject popupAlert; 
-    
+    public GameObject popupAlert;
+
+    [SerializeField]
+    private Button exitButton;
+
+    [SerializeField]
+    private TMP_Text playerList;
+
+    [SerializeField]
+    public LobbyView lobbyView;
+
+    public bool IsTurn { get; set; }
+
     void Update()
     {
-        if (GameManager.Instance.Turn >= 0 && GameManager.Instance.Turn < GameManager.Instance.Players.Count)
+        if (GameManager.Instance.Players.Count > 0)
         {
-            string currentPlayerBalance = GameManager.Instance.Players[GameManager.Instance.Turn].Balance.ToString();
-            balanceText.text = $"Balance: {currentPlayerBalance}";
+            string playerList = "<b><size=40>\n\nPlayers: </size></b>"; // Bigger and bold text with extra new lines
+
+            List<string> usedUsernames = new List<string>(); // Keep track of used usernames
+
+            foreach (Player player in GameManager.Instance.Players)
+            {
+                string username = player.username;
+
+                if (string.IsNullOrEmpty(username) || usedUsernames.Contains(username))
+                {
+                    // Generate a new random name until it is unique
+                    do
+                    {
+                        username = RandomNameGenerator.GenerateRandomName();
+                    } while (usedUsernames.Contains(username));
+
+                    player.username = username; // Assign the generated name to the player
+                    usedUsernames.Add(username); // Add the username to the list of used usernames
+                }
+
+                if (player.IsTurn) // Check if it is the current player's turn
+                {
+                    playerList += "\n\t\t<color=black><size=14><pos=-1.8em>" + username + "</size></color>"; // Black text color, smaller size, and moved a little bit to the left for the current player
+                }
+                else
+                {
+                    playerList += "\n\n\t\t\t\t\t\t<size=14><pos=-1.6em>" + username + "</size>"; // Default text color, smaller size, and moved a little bit to the left for other players
+                }
+            }
+
+            this.playerList.text = playerList;
         }
     }
 
@@ -68,6 +109,8 @@ public sealed class MainView : View
             }
         });
 
+
+        exitButton.onClick.AddListener(Application.Quit);
         base.Initialize();
     }
 }

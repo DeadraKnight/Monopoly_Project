@@ -10,11 +10,15 @@ public sealed class Player : NetworkBehaviour
 {
     public static Player Instance { get; private set; }
 
+
     [SyncVar]
     public string username;
 
     [SyncVar]
     public int Balance = 1500;
+
+    [SyncVar]
+    public bool IsTurn;
 
     [SyncVar]
     public bool IsWinner = false;
@@ -42,6 +46,7 @@ public sealed class Player : NetworkBehaviour
 
     [SyncVar]
     public bool isWinner = false;
+
 
     public Color pawnColor; // stores the chosen color
 
@@ -73,6 +78,7 @@ public sealed class Player : NetworkBehaviour
         ViewManager.Instance.Initialize();
     }
 
+
     [Server]
     public void StartGame()
     {
@@ -83,10 +89,15 @@ public sealed class Player : NetworkBehaviour
         Pawn pawnInstance = Instantiate(pawnPrefab, spawnPoint.position, Quaternion.identity);
 
         controlledPawn = pawnInstance;
-
         controlledPawn.controllingPlayer = this;
 
         Spawn(pawnInstance.gameObject, Owner);
+
+        // Set the initial turn to the first player
+        if (playerIndex == 0)
+        {
+            IsTurn = true;
+        }
     }
 
     [Server]

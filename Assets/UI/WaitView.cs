@@ -5,6 +5,8 @@ public sealed class WaitView : View
     [SerializeField]
     TMP_Text waiting_text;
 
+
+
     private void Update()
     {
         if (!IsInitialized) return;
