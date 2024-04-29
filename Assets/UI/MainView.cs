@@ -109,6 +109,12 @@ public sealed class MainView : View
             }
         });
 
+        showOwnedTilesButton.onClick.AddListener(() =>
+        {
+            GetComponent<DiceRollerUI>().ClearResults();
+            MyTilesPanel myTilesPanel = GetComponent<MyTilesPanel>();
+            myTilesPanel.OpenPanel();
+        });
 
         exitButton.onClick.AddListener(Application.Quit);
         base.Initialize();

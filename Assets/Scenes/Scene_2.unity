@@ -269,7 +269,8 @@ GameObject:
   - component: {fileID: 56608288}
   - component: {fileID: 56608289}
   - component: {fileID: 56608290}
-  m_Layer: 5
+  - component: {fileID: 56608291}
+  m_Layer: 0
   m_Name: Main_View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +297,7 @@ RectTransform:
   - {fileID: 1905502379}
   - {fileID: 1144236272}
   - {fileID: 713367644}
-  - {fileID: 1196714967}
+  - {fileID: 1009698206}
   - {fileID: 1192123453}
   - {fileID: 251926886}
   - {fileID: 1303265095}
@@ -323,7 +324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   purchaseTileButton: {fileID: 1545863151}
   endTurnButton: {fileID: 1144236273}
-  showOwnedTilesButton: {fileID: 0}
+  showOwnedTilesButton: {fileID: 713367645}
   balanceText: {fileID: 251926887}
   popupAlert: {fileID: 1626914742}
   exitButton: {fileID: 1303265096}
@@ -362,6 +363,21 @@ MonoBehaviour:
   purchaseButton: {fileID: 248715395}
   tilePrice: {fileID: 586051402}
   tileRent: {fileID: 216534148}
+--- !u!114 &56608291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56608286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e67e72b891fd7408e747dfea8a0aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilesPanel: {fileID: 1009698209}
+  tilePrefab: {fileID: 1351664553859299896, guid: 393ffbbace6d5ba419b42968bcbd2835, type: 3}
+  grid: {fileID: 1534324796}
 --- !u!1 &77489879
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,8 +511,8 @@ GameObject:
   - component: {fileID: 108781591}
   - component: {fileID: 108781590}
   - component: {fileID: 108781589}
-  m_Layer: 5
-  m_Name: Button
+  m_Layer: 6
+  m_Name: Close Panel Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -517,9 +533,9 @@ RectTransform:
   - {fileID: 814774515}
   m_Father: {fileID: 1009698206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -383.92532, y: 215.47343}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 127.3292, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &108781589
@@ -566,22 +582,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1009698205}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1196714966}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 56608291}
+        m_TargetAssemblyTypeName: MyTilesPanel, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1456,7 +1460,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 271.59, y: 80.21001}
+  m_AnchoredPosition: {x: 271.59, y: 55}
   m_SizeDelta: {x: 137.31, y: 56.511963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216534148
@@ -1950,10 +1954,10 @@ RectTransform:
   - {fileID: 1192013772}
   m_Father: {fileID: 56608287}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -388.99472, y: 4.8680115}
-  m_SizeDelta: {x: -782.9794, y: -261.7361}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -388.99475, y: 4.8680115}
+  m_SizeDelta: {x: 177.02063, y: 360.2639}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286796853
 MonoBehaviour:
@@ -2643,7 +2647,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -271.59, y: 136.72}
+  m_AnchoredPosition: {x: -271.59, y: 115}
   m_SizeDelta: {x: 137.31, y: 56.511963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &522890884
@@ -3106,7 +3110,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 271.59, y: 136.72}
+  m_AnchoredPosition: {x: 271.59, y: 115}
   m_SizeDelta: {x: 137.31, y: 56.511963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &586051402
@@ -3803,6 +3807,10 @@ PrefabInstance:
       value: 11101002089680261846
       objectReference: {fileID: 0}
     - target: {fileID: 5064352433410674465, guid: 5900eced18eb02d4f9c14e54980a25cd, type: 3}
+      propertyPath: <IsNested>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064352433410674465, guid: 5900eced18eb02d4f9c14e54980a25cd, type: 3}
       propertyPath: _networkBehaviours.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3908,7 +3916,7 @@ GameObject:
   - component: {fileID: 713367646}
   - component: {fileID: 713367645}
   m_Layer: 5
-  m_Name: My_Tiles_Button
+  m_Name: My Tiles Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4624,6 +4632,10 @@ PrefabInstance:
       value: 11101002088561015313
       objectReference: {fileID: 0}
     - target: {fileID: 5064352433410674465, guid: 5900eced18eb02d4f9c14e54980a25cd, type: 3}
+      propertyPath: <IsNested>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5064352433410674465, guid: 5900eced18eb02d4f9c14e54980a25cd, type: 3}
       propertyPath: _networkBehaviours.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -4715,7 +4727,7 @@ GameObject:
   - component: {fileID: 814774515}
   - component: {fileID: 814774517}
   - component: {fileID: 814774516}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5035,11 +5047,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1199531143376468241, guid: a6a35d2b5cd136140a1ea3f67709aea1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.25354
+      value: -2.253479
       objectReference: {fileID: 0}
     - target: {fileID: 1199531143376468241, guid: a6a35d2b5cd136140a1ea3f67709aea1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -15.4591675
+      value: -15.458801
       objectReference: {fileID: 0}
     - target: {fileID: 1271106105215346193, guid: a6a35d2b5cd136140a1ea3f67709aea1, type: 3}
       propertyPath: m_text
@@ -5813,7 +5825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.253357, y: -15.4592285}
+  m_AnchoredPosition: {x: -2.253357, y: -15.458923}
   m_SizeDelta: {x: -372.95935, y: -80.91858}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &953077265
@@ -5929,13 +5941,14 @@ GameObject:
   - component: {fileID: 1009698206}
   - component: {fileID: 1009698208}
   - component: {fileID: 1009698207}
-  m_Layer: 5
-  m_Name: Panel
+  - component: {fileID: 1009698209}
+  m_Layer: 6
+  m_Name: My Tiles Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1009698206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5943,13 +5956,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009698205}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000858, y: 1.0000858, z: 1.0000858}
+  m_LocalScale: {x: 0.6, y: 0.8, z: 1.0000858}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 108781588}
-  m_Father: {fileID: 1196714967}
+  - {fileID: 1534324796}
+  m_Father: {fileID: 56608287}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5969,7 +5983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5994,6 +6008,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009698205}
   m_CullTransparentMesh: 1
+--- !u!225 &1009698209
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009698205}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1031706678
 GameObject:
   m_ObjectHideFlags: 0
@@ -6890,108 +6916,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192123452}
   m_CullTransparentMesh: 1
---- !u!1 &1196714966
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1196714967}
-  - component: {fileID: 1196714970}
-  - component: {fileID: 1196714969}
-  - component: {fileID: 1196714968}
-  m_Layer: 5
-  m_Name: My_Tiles_Canvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1196714967
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196714966}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1009698206}
-  m_Father: {fileID: 56608287}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1196714968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196714966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1196714969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196714966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
---- !u!223 &1196714970
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196714966}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1 &1213744808
 GameObject:
   m_ObjectHideFlags: 0
@@ -7676,10 +7600,10 @@ RectTransform:
   - {fileID: 216534147}
   m_Father: {fileID: 56608287}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 4}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 960, y: 622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1253804345
 CanvasGroup:
@@ -8063,6 +7987,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1350806664}
+  - component: {fileID: 1350806665}
   m_Layer: 0
   m_Name: Dice Components
   m_TagString: Untagged
@@ -8087,6 +8012,40 @@ Transform:
   - {fileID: 363219188}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1350806665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350806663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <IsNested>k__BackingField: 0
+  <ComponentIndex>k__BackingField: 0
+  <PredictedSpawn>k__BackingField: {fileID: 0}
+  _networkBehaviours: []
+  <ParentNetworkObject>k__BackingField: {fileID: 0}
+  <ChildNetworkObjects>k__BackingField:
+  - {fileID: 0}
+  - {fileID: 0}
+  SerializedTransformProperties:
+    Position: {x: -1.4640135, y: -1.2457923, z: -0.055360768}
+    Rotation: {x: 0, y: 0, z: 0, w: 1}
+    LocalScale: {x: 1, y: 1, z: 1}
+  _isNetworked: 1
+  _isGlobal: 0
+  _initializeOrder: 0
+  _defaultDespawnType: 0
+  NetworkObserver: {fileID: 0}
+  <PrefabId>k__BackingField: 0
+  <SpawnableCollectionId>k__BackingField: 0
+  _scenePathHash: 2584653461
+  <SceneId>k__BackingField: 11101002090551947586
+  <AssetPathHash>k__BackingField: 0
 --- !u!1 &1463570512
 GameObject:
   m_ObjectHideFlags: 0
@@ -8121,7 +8080,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -271.59, y: 80.21001}
+  m_AnchoredPosition: {x: -271.59, y: 55}
   m_SizeDelta: {x: 137.31, y: 56.511963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1463570514
@@ -8917,6 +8876,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528143740}
   m_CullTransparentMesh: 1
+--- !u!1 &1534324795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534324796}
+  - component: {fileID: 1534324798}
+  - component: {fileID: 1534324797}
+  - component: {fileID: 1534324799}
+  m_Layer: 6
+  m_Name: Grid Layout
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1534324796
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534324795}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1009698206}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 35.518005}
+  m_SizeDelta: {x: -51.319885, y: -128.96399}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1534324797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534324795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1534324798
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534324795}
+  m_CullTransparentMesh: 1
+--- !u!114 &1534324799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534324795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 110, y: 150}
+  m_Spacing: {x: 10, y: 10}
+  m_Constraint: 0
+  m_ConstraintCount: 1
 --- !u!1 &1537308717
 GameObject:
   m_ObjectHideFlags: 0
@@ -9499,7 +9558,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 80, y: 122}
+  m_AnchoredPosition: {x: 80, y: 49.77}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1565940663
@@ -20679,6 +20738,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875794041884513}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Community Chest
   cost: 0
   rent: 0
@@ -20708,6 +20768,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875794041242792}
   panelSprite: {fileID: 21300000, guid: c2ea1ce8e3507bd43b715a844ec89ced, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: States Ave.
   cost: 140
   rent: 50
@@ -20737,6 +20798,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793962997770}
   panelSprite: {fileID: 21300000, guid: 4e98d7605be90bc49b0f3ca1e63bb0b2, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Pennsylvania Ave.
   cost: 320
   rent: 170
@@ -20766,6 +20828,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793954868134}
   panelSprite: {fileID: 21300000, guid: c5c249bef8a819142850dd08bd47f499, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Oriental Ave.
   cost: 100
   rent: 30
@@ -20795,6 +20858,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875794174694279}
   panelSprite: {fileID: 21300000, guid: fc9bba657f54d58488fcd371a596ffda, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Ventnor Ave.
   cost: 260
   rent: 130
@@ -20824,6 +20888,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875794140555305}
   panelSprite: {fileID: 21300000, guid: a4bb9d73c35551c41841e0c3a38a7552, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Mediterranean Ave.
   cost: 60
   rent: 20
@@ -20853,6 +20918,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875794096681540}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Pennsylvania Railroad
   cost: 0
   rent: 0
@@ -20882,6 +20948,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875794088669455}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Chance
   cost: 0
   rent: 0
@@ -20911,6 +20978,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793780493611}
   panelSprite: {fileID: 21300000, guid: be433db64f8bf944392f11902b6abe0e, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Vermont Ave.
   cost: 100
   rent: 30
@@ -20940,6 +21008,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793649204392}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Free Parking
   cost: 0
   rent: 0
@@ -20969,6 +21038,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793903992086}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Community Chest
   cost: 0
   rent: 0
@@ -20998,6 +21068,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793851760592}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Short Line
   cost: 0
   rent: 0
@@ -21027,6 +21098,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793782076944}
   panelSprite: {fileID: 21300000, guid: 87d7f38d93a18674792b0077cdda0f1a, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Indiana Ave.
   cost: 220
   rent: 100
@@ -21056,6 +21128,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793487139362}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: 
   cost: 0
   rent: 0
@@ -21085,6 +21158,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793465753054}
   panelSprite: {fileID: 21300000, guid: 27f3a747b9c5c5c41b03b882eba3cff4, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Marvin Gardens
   cost: 280
   rent: 140
@@ -21114,6 +21188,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793414117915}
   panelSprite: {fileID: 21300000, guid: f4fa5fbfa7576574b8a0f8b7968e9d4d, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Tennessee Ave.
   cost: 180
   rent: 80
@@ -21143,6 +21218,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793387643919}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Go
   cost: 0
   rent: 0
@@ -21172,6 +21248,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793561321101}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Water_Works
   cost: 150
   rent: 0
@@ -21201,6 +21278,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793570217245}
   panelSprite: {fileID: 21300000, guid: 0c446634cffefda4691789a54c5ce6f9, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Illinois Ave.
   cost: 240
   rent: 120
@@ -21230,6 +21308,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793526244719}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Electric Company
   cost: 150
   rent: 0
@@ -21259,6 +21338,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793214947160}
   panelSprite: {fileID: 21300000, guid: 0b6ef5b2e96a4864b83808a2d4a7462a, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Atlantic Ave.
   cost: 260
   rent: 130
@@ -21288,6 +21368,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793215548424}
   panelSprite: {fileID: 21300000, guid: 30c886570edbd014e93334aade61a6a2, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: St. Jame Place
   cost: 180
   rent: 80
@@ -21317,6 +21398,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793177319808}
   panelSprite: {fileID: 21300000, guid: 18d42fb4986d19f48abd7914786da0f9, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Boardwalk
   cost: 400
   rent: 220
@@ -21346,6 +21428,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793249923456}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: B&O_Railroad
   cost: 0
   rent: 0
@@ -21375,6 +21458,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792880247363}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Chance
   cost: 0
   rent: 0
@@ -21404,6 +21488,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792906893988}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Community Chest
   cost: 0
   rent: 0
@@ -21433,6 +21518,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792854870133}
   panelSprite: {fileID: 21300000, guid: da5be57866ecc9b41bbcc84f9043f698, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Ketucky Ave.
   cost: 220
   rent: 100
@@ -21462,6 +21548,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793067900614}
   panelSprite: {fileID: 21300000, guid: bf77be30537a48448a473bd8ac526393, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: New York Ave.
   cost: 200
   rent: 90
@@ -21491,6 +21578,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875793015301721}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Income Tax
   cost: 0
   rent: 0
@@ -21520,6 +21608,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792603300053}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Go to Jail!
   cost: 0
   rent: 0
@@ -21549,6 +21638,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792823698941}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Luxury Tax
   cost: 0
   rent: 0
@@ -21578,6 +21668,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792798473398}
   panelSprite: {fileID: 21300000, guid: fcd2e38a672557f45a1a1bac73459099, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Pacific Ave.
   cost: 300
   rent: 150
@@ -21607,6 +21698,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792731484102}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Reading Railroad
   cost: 0
   rent: 0
@@ -21636,6 +21728,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792361625196}
   panelSprite: {fileID: 21300000, guid: f4a6ecf84ad33cb47ae1d8937a604cbd, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: St. Charles Place
   cost: 140
   rent: 50
@@ -21665,6 +21758,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792310134408}
   panelSprite: {fileID: 21300000, guid: dd46866552618484ea8996f95da853e0, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Virgina Ave.
   cost: 160
   rent: 70
@@ -21694,6 +21788,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792087012967}
   panelSprite: {fileID: 21300000, guid: d3362fc1f810f6e43920659b4d92d3cd, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Baltic Ave.
   cost: 60
   rent: 20
@@ -21723,6 +21818,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792300688013}
   panelSprite: {fileID: 21300000, guid: a901a24e3bf88584cb3b49e831896296, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Connecticut Ave.
   cost: 120
   rent: 50
@@ -21752,6 +21848,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792264402106}
   panelSprite: {fileID: 0}
+  defaultSprite: {fileID: 0}
   tileName: Chance
   cost: 0
   rent: 0
@@ -21781,6 +21878,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792265235933}
   panelSprite: {fileID: 21300000, guid: fb61f27d834cd4e4b9acefaccffead0f, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: Park Place
   cost: 350
   rent: 200
@@ -21810,6 +21908,7 @@ MonoBehaviour:
   owningPlayer: {fileID: 0}
   spriteRenderer: {fileID: 4471875792208034706}
   panelSprite: {fileID: 21300000, guid: 4875707ffb222104a89f6ba02ebc6514, type: 3}
+  defaultSprite: {fileID: 0}
   tileName: North Carolina Ave.
   cost: 300
   rent: 150

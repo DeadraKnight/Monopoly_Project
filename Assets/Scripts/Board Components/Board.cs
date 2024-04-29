@@ -56,7 +56,8 @@ public class Board : NetworkBehaviour
         value.Balance -= Tiles[tileIndex].cost;
 
         // Add the tile to the player's ownedTiles list
-        value.ownedTiles.Add(Tiles[tileIndex]);
+        //moved to the purchase panel since it doesnt need to be synced
+        //value.ownedTiles.Add(Tiles[tileIndex]);
 
         Tiles[tileIndex].owningPlayer = value;
         ObserversSetTileOwner(tileIndex, value);
