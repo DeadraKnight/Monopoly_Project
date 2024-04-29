@@ -89,6 +89,7 @@ public class DiceRoller2D : MonoBehaviour
                     doublesCount++; // Increment doubles count
                     if (doublesCount >= 3)
                     {
+                        totalRoll = 0; // Reset total roll to 0
                         Debug.Log("You rolled doubles three times in a row! Go to jail!");
                         Player.Instance.controlledPawn.GoToJail(); // Move player to jail
                         doublesCount = 0; // Reset doubles count after going to jail
