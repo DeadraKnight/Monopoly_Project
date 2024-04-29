@@ -34,6 +34,9 @@ public sealed class MainView : View
     {
         if (GameManager.Instance.Players.Count > 0)
         {
+            string currentPlayerBalance = GameManager.Instance.Players[GameManager.Instance.Turn].Balance.ToString(); 
+            balanceText.text = $"Balance: {currentPlayerBalance}";
+            
             string playerList = "<b><size=40>\n\nPlayers: </size></b>"; // Bigger and bold text with extra new lines
 
             List<string> usedUsernames = new List<string>(); // Keep track of used usernames
